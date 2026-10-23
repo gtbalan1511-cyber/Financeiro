@@ -1,42 +1,110 @@
-[
-  {
-    "viewport": {
-      "width": 390,
-      "height": 844
+{
+  "browser": "Chromium",
+  "executedAt": "2026-10-23T13:46:08.656Z",
+  "results": [
+    {
+      "name": "quiz/confiança/persistência 390",
+      "status": "PASS"
     },
-    "status": "PASS",
-    "checks": [
-      "navegação",
-      "quiz/confiança",
-      "persistência",
-      "backup download/import",
-      "3 snapshots",
-      "exercício diário",
-      "layout sem overflow",
-      "offline após reload",
-      "console sem exceções",
-      "simulado completo",
-      "feed finito"
-    ]
-  },
-  {
-    "viewport": {
-      "width": 1440,
-      "height": 900
+    {
+      "name": "backup download/recuperação/rejeição inválido 390",
+      "status": "PASS"
     },
-    "status": "PASS",
-    "checks": [
-      "navegação",
-      "quiz/confiança",
-      "persistência",
-      "backup download/import",
-      "3 snapshots",
-      "exercício diário",
-      "layout sem overflow",
-      "offline após reload",
-      "console sem exceções",
-      "simulado completo",
-      "feed finito"
-    ]
-  }
-]
+    {
+      "name": "JSON/ICS/CSV e múltiplos blocos 390",
+      "status": "PASS"
+    },
+    {
+      "name": "simulado configurado/retomada/histórico 390",
+      "status": "PASS"
+    },
+    {
+      "name": "feed estável/confiança/não duplica 390",
+      "status": "PASS"
+    },
+    {
+      "name": "sessão expira uma vez 390",
+      "status": "PASS"
+    },
+    {
+      "name": "swipe/slider/movimento reduzido/feed finito 390",
+      "status": "PASS"
+    },
+    {
+      "name": "layout/navegação voltar 390",
+      "status": "PASS"
+    },
+    {
+      "name": "offline abre/responde/persiste 390",
+      "status": "PASS"
+    },
+    {
+      "name": "sem exceções ou envio externo de dados 390",
+      "status": "PASS"
+    },
+    {
+      "name": "quiz/confiança/persistência 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "backup download/recuperação/rejeição inválido 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "JSON/ICS/CSV e múltiplos blocos 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "simulado configurado/retomada/histórico 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "feed estável/confiança/não duplica 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "sessão expira uma vez 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "swipe/slider/movimento reduzido/feed finito 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "layout/navegação voltar 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "offline abre/responde/persiste 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "sem exceções ou envio externo de dados 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "consulta não fabrica erro ou taxa de acerto",
+      "status": "PASS"
+    },
+    {
+      "name": "importação escapada e nenhum dado privado no cache SW",
+      "status": "PASS"
+    },
+    {
+      "name": "armazenamento corrompido preservado",
+      "status": "PASS"
+    },
+    {
+      "name": "quota: restauração transacional preserva dados",
+      "status": "PASS"
+    },
+    {
+      "name": "concorrência entre abas bloqueia sobrescrita",
+      "status": "PASS"
+    },
+    {
+      "name": "migração SW 1.3 → 1.4 e offline preservam progresso",
+      "status": "PASS"
+    }
+  ]
+}

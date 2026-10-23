@@ -1,29 +1,13 @@
-# Órbita Estudos 1.3.0 — instalação e uso
+# Órbita Estudos 1.4.0
 
-App web estático gratuito, autoral, com 9 matérias, exercícios, flashcards, feed educativo, simulado Exam Prep e exercício do dia condicionado a uma agenda de estudo importada. Não requer API paga.
+Publique somente o ZIP Netlify (index.html na raiz) em HTTPS. O site é estático e gratuito; dados pessoais permanecem no navegador e entram no backup privado exportado.
 
-## Publicação
+Safari no iPhone → Compartilhar → Adicionar à Tela de Início. Abra online uma vez para preparar offline. Em Configurações, exporte backup antes de atualizar ou limpar dados. Verifique atualizações e aplique quando não houver simulado ativo.
 
-Publique **somente os arquivos desta pasta `site/`**, mantendo `index.html` na raiz do deploy. O ZIP `Órbita-Deploy-1.3.0.zip` já foi preparado para isso. O site publicado é acessível publicamente por quem souber o endereço; o arquivo `robots.txt` apenas desencoraja indexação, **não é autenticação**. O site NÃO inclui os dados pessoais, notas, links de Drive nem JSONs privados.
+Exam Prep configura matéria, conteúdo, P2/P3 e quantidade. Simulados em andamento podem ser retomados; resultados ficam no histórico. Revisão espaçada é baseada em confiança e tentativas independentes.
 
-Para publicar na mesma conta Netlify: abra o painel da sua conta, escolha o site existente, faça o deploy do ZIP de publicação e confirme que a versão 1.3.0 aparece no rodapé. Não há credenciais de publicação neste pacote.
+Importe sua agenda JSON ou ICS de eventos únicos e erros do Notion JSON/CSV em Configurações. Sem OAuth: são cópias locais, não sincronização automática. Inclua códigos das disciplinas nos eventos de estudo. ICS recorrente/TZID exige JSON expandido. Não publique seus snapshots ou backups.
 
-## Importar seus dados pessoais
+Para você oferece sessões finitas, desafios, diagramas e simuladores. Vídeos, PDFs e IA generativa não estão integrados. Banco autoral introdutório, sem afiliação à FEI e sem promessa de notas oficiais.
 
-1. Abra o ZIP **privado** em Arquivos no iPhone e extraia seus 3 JSONs.
-2. Abra o Órbita no Safari, vá a **Configurações**.
-3. Importe `agenda_estudos_snapshot.json` no campo Agenda, `notion_estudos_snapshot.json` em Notion e `fontes_drive.json` em Drive.
-4. O app mostra a data da cópia e avisa que **não existe sincronização automática**. O conteúdo é guardado apenas no armazenamento local do navegador; exporte backups periodicamente.
-5. Use **Hoje** para exercício elaborado (apenas se houver bloco de estudo no snapshot), **Preparação de provas** para simulado e **Progresso** para revisão.
-
-**Nunca envie os JSONs pessoais ou o ZIP privado para a hospedagem.** Importação ocorre pelo seletor de arquivos dentro do app, no navegador. Não cole credenciais, tokens ou chaves no aplicativo.
-
-## Instalar no iPhone
-
-Abra o endereço HTTPS no Safari → Compartilhar → Adicionar à Tela de Início. Abra o ícone Órbita. Após primeiro carregamento online, parte do conteúdo pode funcionar offline graças ao Service Worker. O funcionamento offline ainda precisa de teste real no Safari.
-
-## Limitações
-
-O app não lê Google Calendar, Notion ou Drive ao vivo; usa apenas snapshots importados. Não extrai PDFs nem oferece IA generativa conectada. Os exercícios são **autorais**, não provas oficiais da FEI. Respostas de exercícios elaborados são autoavaliadas, não corrigidas automaticamente. Dados não sincronizam entre dispositivos. Não foi realizado teste final no Safari real.
-
-Atualização 1.3.0: offline validado em Chromium mobile/desktop. Safari real continua pendente. Simulados priorizam dificuldades e feed encerra ao fim do catálogo.
+Offline e persistência foram testados em Chromium. Safari/iPhone real ainda requer validação no aparelho. Não há sincronização entre dispositivos. A limpeza de dados do navegador pode apagar o progresso; mantenha backups.

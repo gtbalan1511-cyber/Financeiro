@@ -1,3 +1,14 @@
+# 1.4.0 — 23/10/2026
+
+- Exam Prep configurável por conteúdo, quantidade e objetivo P2/P3; retomada persistente, relatórios e histórico.
+- Revisões de questões e flashcards progressivas (3/7/14/30/60), sem inflar retenção por repetir no mesmo dia; fila acionável, feedback pedagógico e categoria de dificuldade.
+- Seleção entre blocos do dia, próximo estudo por horário local, exclusão de aulas genéricas, prioridades de erros ativos e avaliações próximas.
+- Importadores locais Calendar ICS e Notion CSV além de JSON; validação, idempotência por substituição e recusa explícita de formatos de calendário não suportados.
+- Feed estável após responder, confiança antes de desafios, prevenção de duplicação no retorno, diagramas SVG originais, sessão com encerramento e timer corrigido.
+- Backup transacional, proteção a dados corrompidos, quota, concorrência entre abas, chaves de protótipo e URLs inseguras.
+- SW por versão com ativação explícita, cache somente de assets públicos e migração preservando progresso; histórico de navegação, alvos de toque e campos sem zoom iOS.
+- CI com servidor E2E autônomo e Chromium portável; netlify.toml, ZIPs por allowlist, hashes, auditoria e documentação de integrações pendentes.
+
 # 1.3.0 — 23/10/2026
 
 - Simulado prioriza erros locais, dificuldades importadas e revisões vencidas, mantendo sequência estável durante a tentativa.
