@@ -1,3 +1,10 @@
+## Bloqueio atual da integração real
+
+- Disponibilizar acesso ao editor/painel do aplicativo atual com execução segura de Node ou proxy de `/api/` na mesma origem. Não há conector de publicação neste ambiente; acesso HTTP remoto foi bloqueado (403).
+- Configurar clientes OAuth Google/Notion em configuração privada do servidor e conceder leitura às fontes reais. Não enviar segredos no chat.
+- Após isso, testar dados e renovação reais no iPhone, identificar a estrutura das quatro fontes Notion (data sources versus páginas comuns) e resolver matérias sem código explícito.
+- Nenhuma conexão real está ativa ou validada nesta rodada. A missão depende dessas autorizações; testes locais com provedores simulados não a concluem.
+
 ## Configuração pessoal atual
 
 - Aplicar o código atualizado no aplicativo existente pelo editor responsável pela publicação informada. Não configurar outra hospedagem.

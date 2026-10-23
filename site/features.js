@@ -185,8 +185,12 @@ Object.assign(window.ORBITA_FEATURES, (()=>{
   const check={calendar:F.validCalendar,notion:F.validNotion,drive:F.validDrive}[kind];
   if(!check?.(incoming))throw Error('Estrutura incompatível: '+kind);
   const older=Date.parse(incoming.captured_at)<Date.parse(old?.captured_at);const out=older?{...incoming,...old}:{...old,...incoming};
-  for(const field of ['study_events','error_records','grades','sources','subjects','folders','verified_documents','references'])
+  for(const field of ['study_events','error_records','grades','sources','subjects','folders','verified_documents','references','study_records','all_events'])
    if(Array.isArray(old?.[field])||Array.isArray(incoming[field]))out[field]=older?mergeRows(incoming[field],old?.[field]):mergeRows(old?.[field],incoming[field]);
+  if(!older&&kind==='calendar'&&incoming.complete&&F.date(incoming.sync_window?.from)&&F.date(incoming.sync_window?.to)){
+   const {from,to}=incoming.sync_window;for(const field of ['study_events','all_events'])if(Array.isArray(incoming[field]))out[field]=mergeRows((old?.[field]||[]).filter(x=>x.date<=from||x.date>=to),incoming[field]);
+  }
+  if(!older&&kind==='drive'&&incoming.complete&&incoming.root_folder&&incoming.root_folder===old?.root_folder)for(const field of ['sources','verified_documents'])out[field]=incoming[field]||[];
   return out;
  }
  function normalizePersonal(files,subjects){
@@ -234,6 +238,12 @@ Object.assign(window.ORBITA_FEATURES, (()=>{
  function mergePersonal(state,normalized){
   const imports={...state.imports};for(const [k,v] of Object.entries(normalized.imports))imports[k]=mergeSnapshot(k,imports[k],v);
   const next={...state,imports,exams:mergeRows(state.exams,normalized.exams)};
+  const cal=normalized.imports.calendar;
+  if(cal?.source==='Google Calendar OAuth'&&cal.complete&&F.date(cal.sync_window?.from)&&F.date(cal.sync_window?.to)){
+   const incomingIds=new Set(normalized.exams.map(e=>e.id));const withdrawn=(state.exams||[]).filter(e=>e.source==='Google Calendar OAuth'&&e.date>cal.sync_window.from&&e.date<cal.sync_window.to&&!incomingIds.has(e.id));
+   const ids=new Set(withdrawn.map(e=>e.id));next.exams=next.exams.filter(e=>!ids.has(e.id));
+   if(withdrawn.length)next.assessmentHistory=[...(state.assessmentHistory||[]),...withdrawn.map(e=>({...e,confirmed:false,status:'Não confirmado na sincronização atual',checked_at:cal.captured_at}))];
+  }
   if(!F.validState(next))throw Error('Importação incompatível com o histórico existente');return next;
  }
  function academicClock(now=new Date()){

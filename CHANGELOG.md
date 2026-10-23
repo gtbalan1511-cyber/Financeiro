@@ -1,3 +1,11 @@
+## Conexões — infraestrutura independente de provedor
+
+- Servidor Node com aplicativo e API na mesma origem, corpo limitado e isolamento de arquivos públicos; Dockerfile sem dados pessoais.
+- Corrigido POST na sincronização por interface, seleção de múltiplas bases Notion e preservação na renovação de tokens Google/Notion.
+- Calendar cadastra somente avaliações confirmadas; agenda atualizada dentro da janela, retirada de confirmações arquivada sem apagar provas manuais.
+- Drive percorre subpastas autorizadas e associa metadados por códigos reais. Atualização automática enquanto visível, falhas exibidas e cópia offline preservada.
+- Sem deploy nem consentimento real: BACKEND-SETUP.md documenta as ações externas indispensáveis e os limites.
+
 ## Configuração pessoal da 1.5.0 — 23/10/2026
 
 - Importação privada de um pacote único com quatro esquemas parciais, validação e mesclagem incremental.

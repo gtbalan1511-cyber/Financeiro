@@ -9,7 +9,8 @@
     "build": "python package.py",
     "catalog:build": "node tools/build-catalog.cjs",
     "test:usage": "node tools/simulate-use.cjs",
-    "videos:verify": "python tools/verify-video-sources.py"
+    "videos:verify": "python tools/verify-video-sources.py",
+    "start:integrated": "node server/index.cjs"
   },
   "devDependencies": {
     "playwright": "1.62.1"

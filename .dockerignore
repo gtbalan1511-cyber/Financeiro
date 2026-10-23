@@ -1,0 +1,9 @@
+**
+!Dockerfile
+!site/
+!site/**
+!server/
+!server/**
+!netlify/
+!netlify/functions/
+!netlify/functions/**

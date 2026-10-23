@@ -1,3 +1,5 @@
+> Conexões: há agora um servidor Node independente de provedor em `server/index.cjs`, com aplicativo e `/api/` na mesma origem. Veja [BACKEND-SETUP.md](BACKEND-SETUP.md). Não houve publicação nem autorização real das contas.
+
 > Configuração pessoal da versão existente: veja [PERSONAL-SETUP.md](PERSONAL-SETUP.md). Um único pacote privado pode ser mesclado sem apagar progresso. Não houve mudança de hospedagem ou conexão real às contas nesta rodada.
 
 # Órbita Estudos 1.5.0

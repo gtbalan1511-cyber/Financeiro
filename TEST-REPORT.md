@@ -1,3 +1,13 @@
+## Integrações e backend independente — rodada atual
+
+- `TZ=America/Sao_Paulo npm test`: 65 testes Node, 26 verificações VM e 15 verificações estáticas aprovados.
+- `npm run test:browser`: 30 cenários Chromium aprovados, com mobile/desktop e preservação de progresso/backup/offline. Novo cenário usa API explicitamente simulada para conferir POST, seleção de duas bases, cadastro de avaliação e mensagem de falha sem perda da cópia anterior.
+- O adaptador HTTP foi testado com servidor/socket reais: app/API, JSON de configuração ausente, isolamento de caminhos, método e limite de corpo. OAuth e conteúdo dos provedores foram simulados; nenhuma conta real foi autorizada.
+- `npm run test:usage` executado, sem alteração do catálogo; resultados sintéticos não comprovam aprendizagem.
+- `npm run build` executado, gerando pacotes públicos por allowlist; não constitui publicação. Dockerfile preparado, imagem não construída/testada.
+- Verificação da URL atual falhou por bloqueio de acesso (403 do proxy); o diagnóstico não detectou API acessível. Não há ferramenta ou credencial de implantação utilizável e faltam clientes OAuth do aplicativo.
+- Nenhuma conexão real, leitura de dados do usuário via API ou deploy foi executado. A missão de integração permanece dependente do acesso à infraestrutura atual e consentimento externo. Safari físico e estruturas reais das quatro fontes Notion permanecem sem validação.
+
 ## Configuração pessoal 1.5.0 — 23/10/2026
 
 - `TZ=America/Sao_Paulo npm test`: 56 testes Node, 26 verificações VM e 15 verificações estáticas aprovados.
