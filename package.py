@@ -15,7 +15,7 @@ out=root/'dist';out.mkdir(exist_ok=True)
 for p in out.glob('Orbita-*.zip'):p.unlink() # Somente artefatos anteriores gerados por este script.
 with ZipFile(out/f'Orbita-Netlify-{version}.zip','w',ZIP_DEFLATED) as z:
  for name in sorted(allowed):z.write(site/name,name)
-files=['.gitignore','netlify.toml','AGENTS.md','PRODUTO-E-ACEITE.md','NEXT-STEPS.md','CHANGELOG.md','TEST-REPORT.md','TEST-RESULTS.json','BROWSER-RESULTS.json','README.md','AUDIT-1.4.md','INTEGRATIONS.md','PR-DESCRIPTION.md','CONTENT-COVERAGE.json','CONTENT-REPORT.md','FEED-SIMULATION-RESULTS.json','VIDEO-VERIFICATION-RESULTS.json','BACKEND-SETUP.md','package.json','package-lock.json','package.py','test_logic.cjs','test_static.py']
+files=['PERSONAL-SETUP.md','.gitignore','netlify.toml','AGENTS.md','PRODUTO-E-ACEITE.md','NEXT-STEPS.md','CHANGELOG.md','TEST-REPORT.md','TEST-RESULTS.json','BROWSER-RESULTS.json','README.md','AUDIT-1.4.md','INTEGRATIONS.md','PR-DESCRIPTION.md','CONTENT-COVERAGE.json','CONTENT-REPORT.md','FEED-SIMULATION-RESULTS.json','VIDEO-VERIFICATION-RESULTS.json','BACKEND-SETUP.md','package.json','package-lock.json','package.py','test_logic.cjs','test_static.py']
 with ZipFile(out/f'Orbita-Codigo-Fonte-{version}.zip','w',ZIP_DEFLATED) as z:
  for name in files:
   p=root/name

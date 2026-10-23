@@ -1,3 +1,13 @@
+## Configuração pessoal 1.5.0 — 23/10/2026
+
+- `TZ=America/Sao_Paulo npm test`: 56 testes Node, 26 verificações VM e 15 verificações estáticas aprovados.
+- `npm run test:browser`: 29 cenários Chromium aprovados, incluindo mobile 390×844 e desktop 1440×900. Novo cenário cobre importação única duas vezes, preservação da tentativa anterior, correção do exercício diário, backup, restauração e reabertura offline. A migração de Service Worker também preserva progresso.
+- `npm run test:usage`: cenários de uso sintético executados; resultados em FEED-SIMULATION-RESULTS.json. Não representam aprendizagem real.
+- `npm run build`: pacote público por allowlist e verificações locais; nenhum deploy executado.
+- O pacote real foi analisado e convertido fora do repositório: quatro eventos, três dificuldades, quatro referências Notion, três materiais, nenhuma avaliação confirmada; nenhum registro recusado. Os quatro blocos encontram exercícios autorais correspondentes. Isso valida conversão, não comprova sincronização ou conclusão dos exercícios.
+- Nenhum dado pessoal foi inserido no aplicativo remoto. A URL fornecida pelo usuário teve acesso bloqueado pelo proxy (403). Não houve acesso ao editor da publicação.
+- OAuth real, acesso a PDFs privados e Safari físico não foram testados. Correções numéricas seguem os dados/resoluções disponíveis; não há avaliação automática de respostas discursivas.
+
 # Validação 1.5.0 — 23/10/2026
 
 Linux, Node 24.19.0, Python 3.12, Playwright 1.62.1, Chromium headless. Não executado Safari físico.

@@ -1,3 +1,11 @@
+## Configuração pessoal atual
+
+- Aplicar o código atualizado no aplicativo existente pelo editor responsável pela publicação informada. Não configurar outra hospedagem.
+- Importar o JSON pessoal único pelo novo controle; os dados não foram inseridos remotamente no navegador do usuário.
+- Autorizar OAuth de leitura e disponibilizar execução segura de `/api/` na plataforma existente para conexões reais. Recortes não substituem sincronização.
+- Recuperar avaliações confirmadas e registros completos quando as contas estiverem autorizadas. Não estimar datas.
+- Validar Safari físico e resoluções quantitativas com o material original do professor.
+
 # Pendências — 1.5.0
 
 1. **Publicar com autorização Netlify.** O projeto Git inclui funções e rotas; o ZIP estático permite estudo offline, mas não ativa OAuth. Sem publicação nova nesta sessão. main não foi mesclada.

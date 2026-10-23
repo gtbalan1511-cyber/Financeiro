@@ -1,3 +1,5 @@
+> Configuração pessoal da versão existente: veja [PERSONAL-SETUP.md](PERSONAL-SETUP.md). Um único pacote privado pode ser mesclado sem apagar progresso. Não houve mudança de hospedagem ou conexão real às contas nesta rodada.
+
 # Órbita Estudos 1.5.0
 
 Continuação incremental da 1.4. PWA pessoal para Engenharia Mecânica: catálogo expansível, feed adaptativo, simulados, revisão espaçada e backend de conexões somente leitura. Sem IA paga ou serviço contratado nesta entrega.

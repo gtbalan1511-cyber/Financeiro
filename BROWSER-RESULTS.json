@@ -1,6 +1,6 @@
 {
   "browser": "Chromium",
-  "executedAt": "2026-10-23T15:05:55.965Z",
+  "executedAt": "2026-10-23T16:31:48.727Z",
   "results": [
     {
       "name": "quiz/confiança/persistência 390",
@@ -80,6 +80,10 @@
     },
     {
       "name": "sem exceções ou envio externo de dados 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "pacote único: mesclagem, deduplicação, exercício diário, backup, restauração e offline",
       "status": "PASS"
     },
     {

@@ -1,3 +1,11 @@
+## Configuração pessoal da 1.5.0 — 23/10/2026
+
+- Importação privada de um pacote único com quatro esquemas parciais, validação e mesclagem incremental.
+- Preservação de progresso e registros ausentes no recorte; deduplicação por ID/URL/chave composta.
+- Fuso acadêmico São Paulo; tipo explícito impede confundir aulas com estudo. Avaliações exigem confirmação e evidência.
+- Atalhos Notion e materiais Drive importados sem publicar dados. Correção compartilhada e resoluções por questão no resultado dos simulados.
+- Cache PWA atualizado; hospedagem mantida, sem publicação nesta rodada. Consulte PERSONAL-SETUP.md.
+
 # 1.5.0 — 23/10/2026
 
 - Catálogo externo versionado: 402 atividades (153 explicações, 153 desafios, 36 simulações, 60 referências de vídeo), cobrindo nove disciplinas. Contagem de conceitos e limitações explícitas.

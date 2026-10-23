@@ -132,9 +132,9 @@ Object.assign(window.ORBITA_FEATURES, (()=>{
       return {q,score:score+(a&&(!a.correct||a.help||a.confidence<75)?6:0)+(a?.reviewDue<=day?4:0)+(!a?1:0)};
     }).sort((a,b)=>b.score-a.score).map(x=>x.q);
   }
-  function studyEvents(calendar,subjects,from){return (calendar?.study_events||[]).filter(e=>(!from||e.date>=from)&&subjects.some(s=>s.id===e.subject)&&(e.kind==='study'||/\bestudo\b|\brevis[aã]o\b|\bsimulado\b/i.test(e.title))).slice().sort((a,b)=>(a.date+a.start).localeCompare(b.date+b.start))}
+  function studyEvents(calendar,subjects,from){return (calendar?.study_events||[]).filter(e=>(!from||e.date>=from)&&subjects.some(s=>s.id===e.subject)&&(['study','mock'].includes(e.kind)||(!e.kind&&/\bestudo\b|\brevis[aã]o\b|\bsimulado\b/i.test(e.title)))).slice().sort((a,b)=>(a.date+a.start).localeCompare(b.date+b.start))}
   function nextBlocks(calendar,subjects,now=new Date()){
-    const day=F.dateLocal(now),clock=String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
+    const academic=calendar?.timezone==='America/Sao_Paulo'?F.academicClock(now):null;const day=academic?.date||F.dateLocal(now),clock=academic?.time||String(now.getHours()).padStart(2,'0')+':'+String(now.getMinutes()).padStart(2,'0');
     return studyEvents(calendar,subjects,day).filter(e=>e.date>day||(e.end||e.start)>=clock).slice(0,8);
   }
   function chooseDaily(event,errors=[]){
@@ -173,4 +173,72 @@ Object.assign(window.ORBITA_FEATURES, (()=>{
     const j={captured_at:new Date().toISOString(),source:'CSV local do Notion',error_records:errors,grades:[]};if(!validNotion(j))throw Error('Erros inválidos no CSV.');return j;
   }
   return {validState,validCalendar,validNotion,validDrive,date,time,https,normalize,activeError,shiftDate,latest,schedule,rankQuestions,studyEvents,nextBlocks,chooseDaily,feedback,parseICS,parseNotionCSV};
+})());
+
+
+// Pacotes pessoais são lidos apenas no navegador; nunca fazem parte do catálogo público.
+Object.assign(window.ORBITA_FEATURES, (()=>{
+ const F=window.ORBITA_FEATURES;
+ const key=x=>String(x.id||x.url||[x.subject,x.date,x.start,x.title||x.topic||x.code].join('|'));
+ function mergeRows(old=[],incoming=[]){const m=new Map(old.map(x=>[key(x),x]));for(const x of incoming)m.set(key(x),{...m.get(key(x)),...x});return [...m.values()]}
+ function mergeSnapshot(kind,old,incoming){
+  const check={calendar:F.validCalendar,notion:F.validNotion,drive:F.validDrive}[kind];
+  if(!check?.(incoming))throw Error('Estrutura incompatível: '+kind);
+  const older=Date.parse(incoming.captured_at)<Date.parse(old?.captured_at);const out=older?{...incoming,...old}:{...old,...incoming};
+  for(const field of ['study_events','error_records','grades','sources','subjects','folders','verified_documents','references'])
+   if(Array.isArray(old?.[field])||Array.isArray(incoming[field]))out[field]=older?mergeRows(incoming[field],old?.[field]):mergeRows(old?.[field],incoming[field]);
+  return out;
+ }
+ function normalizePersonal(files,subjects){
+  if(files?.schema==='orbita-personal-package-v1')files=files.files;
+  if(!files||typeof files!=='object'||Array.isArray(files))throw Error('Pacote pessoal inválido');
+  const known=s=>subjects.some(x=>x.id===s), imports={}, exams=[], rejected=[];
+  const safe=x=>typeof x==='string'&&x.length<=20000;
+  for(const [name,j] of Object.entries(files)){
+   if(!j||typeof j!=='object')throw Error('Documento inválido: '+name);
+   const meta={captured_at:j.captured_at,complete:j.complete===true,source:'Pacote pessoal importado (não sincronizado)',original_source:j.source,original_schema:j.schema,note:j.note};
+   if(j.schema==='orbita-calendar-starter-v1'){
+    if(j.timezone!=='America/Sao_Paulo'||!Array.isArray(j.events))throw Error('Agenda sem fuso ou eventos válidos');
+    const rows=[];
+    for(const e of j.events){
+     // Exige instante com offset explícito; converte a data civil no fuso acadêmico.
+     if(!known(e.subject)||!safe(e.summary)||!/^\d{4}-\d\d-\d\dT\d\d:\d\d.*(Z|[+-]\d\d:\d\d)$/.test(e.start||'')||!F.date(e.start.slice(0,10))||!/^\d{4}-\d\d-\d\dT\d\d:\d\d.*(Z|[+-]\d\d:\d\d)$/.test(e.end||'')||!F.date((e.end||'').slice(0,10))||!Number.isFinite(Date.parse(e.start))||!Number.isFinite(Date.parse(e.end))||Date.parse(e.end)<=Date.parse(e.start)){rejected.push(name+': evento inválido');continue}
+     const parts=t=>Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date(t)).map(x=>[x.type,x.value]));
+     const a=parts(e.start),b=parts(e.end),date=`${a.year}-${a.month}-${a.day}`,endDate=`${b.year}-${b.month}-${b.day}`;
+     if(date!==endDate){rejected.push(name+': bloco atravessa meia-noite');continue}
+     const kinds={study:'study',review:'study',mock:'mock',class:'class',exam:'exam',lab:'lab',activity:'activity'};
+     const kind=kinds[e.type]||'unknown';
+     rows.push({...e,id:e.id||[e.subject,e.start,e.summary].join('|'),date,start:`${a.hour}:${a.minute}`,end:`${b.hour}:${b.minute}`,title:e.summary,kind,source_start:e.start,source_end:e.end});
+     // Eventos de estudo com P2 no título não são datas de prova.
+     if(['exam','lab','activity'].includes(kind)&&e.confirmed===true)exams.push({id:'calendar:'+key(e),subject:e.subject,title:e.summary,date,type:kind,confirmed:true,source:'calendar',evidence:e.id||e.start,topics:[]});
+    }
+    imports.calendar={...meta,timezone:j.timezone,study_events:rows};
+   }else if(j.schema==='orbita-notion-references-v1'){
+    if(!Array.isArray(j.sources)||!Array.isArray(j.weak_topics))throw Error('Referências Notion inválidas');
+    const references=j.sources.filter(x=>{const ok=safe(x.title)&&F.https(x.url);if(!ok)rejected.push(name+': referência inválida');return ok});
+    const error_records=j.weak_topics.filter(x=>{const ok=known(x.subject)&&safe(x.topic)&&F.https(x.url);if(!ok)rejected.push(name+': dificuldade inválida');return ok}).map(x=>({...x,id:x.url,evidence:'Dificuldade referenciada; tentativa e revisão não exportadas'}));
+    imports.notion={...meta,references,error_records,grades:[]};
+   }else if(j.schema==='orbita-drive-references-v1'){
+    if(!Array.isArray(j.materials))throw Error('Materiais inválidos');
+    const sources=j.materials.filter(x=>{const ok=known(x.subject)&&safe(x.title)&&F.https(x.url);if(!ok)rejected.push(name+': material inválido');return ok});
+    imports.drive={...meta,sources,verified_documents:sources.map(x=>({...x,verified:'Referência importada; conteúdo não recuperado'}))};
+   }else if(j.schema==='orbita-exams-seed-v1'){
+    if(!Array.isArray(j.exams))throw Error('Avaliações inválidas');
+    for(const e of j.exams){if(known(e.subject)&&safe(e.title)&&F.date(e.date)&&e.confirmed===true&&safe(e.source)&&safe(e.evidence)&&['exam','lab','activity','mock'].includes(e.type))exams.push({...e,id:e.id||'assessment:'+key(e)});else rejected.push(name+': avaliação sem confirmação/evidência')}
+   }else throw Error('Esquema não reconhecido: '+name);
+  }
+  if(!Object.keys(imports).length&&!exams.length)throw Error('Pacote sem fontes reconhecidas');
+  for(const [k,v] of Object.entries(imports))if(!({calendar:F.validCalendar,notion:F.validNotion,drive:F.validDrive})[k](v))throw Error('Dados convertidos inválidos: '+k);
+  return {imports,exams,rejected};
+ }
+ function mergePersonal(state,normalized){
+  const imports={...state.imports};for(const [k,v] of Object.entries(normalized.imports))imports[k]=mergeSnapshot(k,imports[k],v);
+  const next={...state,imports,exams:mergeRows(state.exams,normalized.exams)};
+  if(!F.validState(next))throw Error('Importação incompatível com o histórico existente');return next;
+ }
+ function academicClock(now=new Date()){
+  const p=Object.fromEntries(new Intl.DateTimeFormat('en-CA',{timeZone:'America/Sao_Paulo',year:'numeric',month:'2-digit',day:'2-digit',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now).map(x=>[x.type,x.value]));
+  return {date:`${p.year}-${p.month}-${p.day}`,time:`${p.hour}:${p.minute}`};
+ }
+ return {mergeRows,mergeSnapshot,normalizePersonal,mergePersonal,academicClock};
 })());
