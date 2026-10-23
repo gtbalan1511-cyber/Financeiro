@@ -1,0 +1,7 @@
+node_modules/
+_contexto_privado/
+.env
+.env.*
+!.env.example
+*backup*.json
+.DS_Store

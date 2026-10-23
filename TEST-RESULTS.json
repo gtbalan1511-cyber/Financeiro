@@ -1,0 +1,106 @@
+[
+  {
+    "name": "Tela inicial abre com nove matérias",
+    "status": "PASS"
+  },
+  {
+    "name": "Não embute dados privados",
+    "status": "PASS"
+  },
+  {
+    "name": "Tela Hoje sem agenda não inventa exercício",
+    "status": "PASS"
+  },
+  {
+    "name": "Importação privada de 3 snapshots",
+    "status": "PASS"
+  },
+  {
+    "name": "Hoje seleciona Hill 23/10",
+    "status": "PASS"
+  },
+  {
+    "name": "Bloqueia correção sem confiança",
+    "status": "PASS"
+  },
+  {
+    "name": "Correção com confiança",
+    "status": "PASS"
+  },
+  {
+    "name": "Registro de autoavaliação",
+    "status": "PASS"
+  },
+  {
+    "name": "Sem bloco 07/11 não inventa exercício",
+    "status": "PASS"
+  },
+  {
+    "name": "Notas e fórmulas projetadas",
+    "status": "PASS"
+  },
+  {
+    "name": "Exam Prep e simulado autoral",
+    "status": "PASS"
+  },
+  {
+    "name": "Feed renderiza sem erro",
+    "status": "PASS"
+  },
+  {
+    "name": "Quiz exige confiança",
+    "status": "PASS"
+  },
+  {
+    "name": "Quiz com confiança salva evidência",
+    "status": "PASS"
+  },
+  {
+    "name": "Quiz revela resposta não marca acerto",
+    "status": "PASS"
+  },
+  {
+    "name": "Persistência após reload JS",
+    "status": "PASS"
+  },
+  {
+    "name": "Formulário privado Drive abre link importado",
+    "status": "PASS"
+  },
+  {
+    "name": "Simulado termina e apresenta relatório",
+    "status": "PASS"
+  },
+  {
+    "name": "Sem dados pessoais no JS publicado",
+    "status": "PASS"
+  },
+  {
+    "name": "Cálculo Hill validado",
+    "status": "PASS"
+  },
+  {
+    "name": "Regra de matching sem inventar evento",
+    "status": "PASS"
+  },
+  {
+    "name": "Agenda desconhecida não recebe exercício inventado",
+    "status": "PASS"
+  },
+  {
+    "name": "Rejeita agenda com hora ou data inválida",
+    "status": "PASS"
+  },
+  {
+    "name": "Rejeita Drive com URL executável",
+    "status": "PASS"
+  },
+  {
+    "name": "Rejeita backup que quebraria renderização",
+    "status": "PASS"
+  },
+  {
+    "name": "Duplo envio não duplica evidência",
+    "status": "PASS"
+  }
+]
