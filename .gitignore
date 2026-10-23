@@ -5,3 +5,5 @@ _contexto_privado/
 !.env.example
 *backup*.json
 .DS_Store
+__pycache__/
+.netlify/

@@ -1,7 +1,7 @@
 name: Orbita CI and release package
 on:
   push:
-    branches: [main, feat/orbita-1.4-integrated]
+    branches: [main, feat/orbita-1.4-integrated, feat/orbita-1.5-adaptive]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -25,6 +25,7 @@ jobs:
       - run: npm ci
       - run: npm test
       - run: npx playwright install --with-deps chromium
+      - run: npm run test:usage
       - run: npm run test:browser
       - run: npm run build
       - name: Check deployment archive for private data

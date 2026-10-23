@@ -1,12 +1,15 @@
 {
   "name": "orbita-estudos",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "private": true,
   "scripts": {
     "start": "python -m http.server 4173 --directory site",
-    "test": "node --test tests/core.test.cjs && node test_logic.cjs && python test_static.py",
+    "test": "node --test tests/*.test.cjs && node test_logic.cjs && python test_static.py",
     "test:browser": "node tests/browser.cjs",
-    "build": "python package.py"
+    "build": "python package.py",
+    "catalog:build": "node tools/build-catalog.cjs",
+    "test:usage": "node tools/simulate-use.cjs",
+    "videos:verify": "python tools/verify-video-sources.py"
   },
   "devDependencies": {
     "playwright": "1.62.1"
