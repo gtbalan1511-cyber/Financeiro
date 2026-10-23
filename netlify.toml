@@ -1,0 +1,5 @@
+[build]
+  publish = "site"
+
+# Sem build remoto obrigatório, backend ou serviços pagos.
+# A suíte local/CI deve passar antes do deploy; somente site/ é público.

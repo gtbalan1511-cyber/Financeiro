@@ -1,21 +1,78 @@
-const {chromium,webkit}=require('playwright');
-const assert=require('node:assert/strict');
-const fs=require('fs');
-(async()=>{const browser=await chromium.launch({executablePath:process.env.CHROMIUM_PATH||'/usr/bin/chromium',headless:true,args:['--no-sandbox']});const results=[];
-for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
- const context=await browser.newContext({viewport,acceptDownloads:true});const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));
- await page.goto('http://127.0.0.1:4173');await page.locator('.subject').first().waitFor();assert.equal(await page.locator('.subject').count(),9);
- await page.locator('[data-page="quiz"]').first().click();await page.locator('[data-act="pick"]').first().click();assert(await page.locator('[data-act="assess"]').isDisabled());await page.locator('[data-act="confidence"]').first().click();await page.locator('[data-act="assess"]').click();assert.equal(await page.locator('.explanation').count(),1);
- await page.reload();assert.equal(await page.evaluate(()=>JSON.parse(localStorage.getItem('orbita_private_v1')).attempts.length),1);
- await page.locator('[data-page="settings"]').first().click();const downloadPromise=page.waitForEvent('download');await page.locator('[data-act="export"]').click();const download=await downloadPromise;const backup=JSON.parse(fs.readFileSync(await download.path(),'utf8'));assert.equal(backup.data.attempts.length,1);
- page.on('dialog',d=>d.accept());await page.locator('#backupimport').setInputFiles({name:'backup.json',mimeType:'application/json',buffer:Buffer.from(JSON.stringify(backup))});await page.locator('.subject').first().waitFor();
- await page.locator('[data-page="settings"]').first().click();for(const [key,file] of [['calendar','agenda_estudos_snapshot'],['notion','notion_estudos_snapshot'],['drive','fontes_drive']])await page.locator('#import-'+key).setInputFiles('tests/fixtures/'+file+'.json');
- await page.locator('[data-page="daily"]').first().click();assert(await page.locator('body').innerText().then(t=>t.includes('Hill')));
- for(const name of ['feed','study','progress']){await page.locator(`[data-page="${name}"]`).first().click();assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
- await page.locator('[data-page="prep"]').first().click();await page.locator('[data-act="start-sim"]').click();
- while(await page.locator('[data-act="pick"]').count()){await page.locator('[data-act="pick"]').first().click();await page.locator('[data-act="confidence"]').first().click();await page.locator('[data-act="assess"]').click();await page.locator('[data-act="next-quiz"]').click();}
- assert(await page.locator('body').innerText().then(t=>t.includes('Resultado do treino')));
- await page.locator('[data-page="feed"]').first().click();const total=await page.evaluate(()=>window.ORBITA_DATA.feed.length);for(let i=0;i<total;i++)await page.locator('[data-act="next-feed"]').click();assert.equal(await page.locator('.modal h2').innerText(),'Sessão concluída');await page.locator('[data-page="home"]').last().click();
- await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await context.setOffline(true);await page.reload();await page.locator('.subject').first().waitFor();assert.equal(await page.locator('.subject').count(),9);await context.setOffline(false);
- assert.deepEqual(errors,[]);results.push({viewport,status:'PASS',checks:['navegação','quiz/confiança','persistência','backup download/import','3 snapshots','exercício diário','layout sem overflow','offline após reload','console sem exceções','simulado completo','feed finito']});await context.close();
-}await browser.close();fs.writeFileSync('BROWSER-RESULTS.json',JSON.stringify(results,null,2));console.log(JSON.stringify(results,null,2));})().catch(e=>{console.error(e);process.exitCode=1});
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict'),fs=require('node:fs'),path=require('node:path'),http=require('node:http');
+
+const root=path.resolve(__dirname,'..'),site=path.join(root,'site'),KEY='orbita_private_v1';
+let serveLegacy=false;
+const types={'.html':'text/html','.js':'text/javascript','.css':'text/css','.json':'application/json','.webmanifest':'application/manifest+json','.png':'image/png'};
+const server=http.createServer((req,res)=>{try{const rel=decodeURIComponent(new URL(req.url,'http://localhost').pathname).replace(/^\//,'')||'index.html';const file=path.resolve(site,rel);if(!file.startsWith(site+path.sep))throw Error('path');let content=serveLegacy?fs.readFileSync(path.join(root,'tests/fixtures/pwa-1.3',rel)):fs.readFileSync(file);res.setHeader('Content-Type',types[path.extname(file)]||'text/plain');res.setHeader('Cache-Control','no-cache');res.setHeader('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'");res.end(content)}catch{res.writeHead(404);res.end('not found')}});
+const results=[];let browser;
+const check=(name)=>{results.push({name,status:'PASS'});console.log('PASS',name)};
+const act=(page,name)=>page.locator(`[data-act="${name}"]`);
+const nav=(page,name)=>page.locator(`[data-page="${name}"]`).first().click();
+const data=page=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)),KEY);
+async function importFile(page,id,name,object){await page.evaluate(()=>document.querySelector('.toast')?.remove());await page.locator('#'+id).setInputFiles({name,mimeType:'application/json',buffer:Buffer.from(typeof object==='string'?object:JSON.stringify(object))});await page.waitForFunction(id=>!document.getElementById(id)?.files?.length||/inválido|Não importado|Não salvo/.test(document.querySelector('.toast')?.textContent||''),id)}
+
+(async()=>{
+ await new Promise(r=>server.listen(0,'127.0.0.1',r));const url='http://127.0.0.1:'+server.address().port;
+ browser=await chromium.launch({...(process.env.CHROMIUM_PATH?{executablePath:process.env.CHROMIUM_PATH}:fs.existsSync('/usr/bin/chromium')?{executablePath:'/usr/bin/chromium'}:{}),headless:true,args:['--no-sandbox']});
+ for(const viewport of [{width:390,height:844},{width:1440,height:900}]){
+  const context=await browser.newContext({viewport,acceptDownloads:true,reducedMotion:'reduce',timezoneId:'America/Sao_Paulo'}),page=await context.newPage(),errors=[],external=[];
+  page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>{if(!r.url().startsWith(url))external.push(r.url())});page.on('dialog',d=>d.accept());
+  await page.clock.install({time:new Date('2026-10-23T11:00:00Z')});
+  await page.goto(url);await page.locator('.subject').first().waitFor();assert.equal(await page.locator('.subject').count(),9);
+  await nav(page,'quiz');await act(page,'pick').first().click();assert(await act(page,'assess').isDisabled());await act(page,'confidence').filter({hasText:'75%'}).click();await act(page,'assess').click();assert.equal(await page.locator('.explanation').count(),1);assert.equal((await data(page)).attempts.length,1);
+  await page.reload();assert.equal((await data(page)).attempts.length,1);check(`quiz/confiança/persistência ${viewport.width}`);
+  await nav(page,'settings');const dp=page.waitForEvent('download');await act(page,'export').click();const dl=await dp;const backup=JSON.parse(fs.readFileSync(await dl.path(),'utf8'));assert.equal(backup.data.attempts.length,1);
+  await importFile(page,'backupimport','invalid.json',{app:'orbita-estudos',version:1,data:{attempts:[],exams:[],dailyAttempts:[null]}});assert.equal((await data(page)).attempts.length,1);
+  await importFile(page,'backupimport','valid.json',backup);await page.locator('.subject').first().waitFor();assert.equal((await data(page)).attempts.length,1);check(`backup download/recuperação/rejeição inválido ${viewport.width}`);
+  await nav(page,'settings');
+  const calendar={captured_at:'2026-10-23',study_events:[{date:'2026-10-23',start:'08:00',end:'09:00',title:'Estudo P2 MEP230 Hill',subject:'MEP230'},{date:'2026-10-23',start:'10:00',end:'11:00',title:'Estudo MEE120 trocador',subject:'MEE120'},{date:'2026-10-24',start:'09:00',end:'10:00',title:'Aula MEP230',subject:'MEP230'}]};
+  await importFile(page,'import-calendar','agenda.json',calendar);await importFile(page,'import-notion','notion.json',{error_records:[{subject:'MEP230',topic:'Hill',next_rule:'Checar unidades'}],grades:[]});await page.locator('#import-drive').setInputFiles(path.join(root,'tests/fixtures/fontes_drive.json'));
+  await nav(page,'daily');assert((await page.locator('.quizbox h2').innerText()).includes('Hill'));await page.locator('[data-act="daily-block"][data-value="1"]').click();assert((await page.locator('.quizbox h2').innerText()).includes('Trocador'));
+  await act(page,'daily-confidence').first().click();await act(page,'daily-reveal').click();await act(page,'daily-status').first().click();await act(page,'daily-save').click();assert.equal((await data(page)).dailyAttempts.length,1);
+  await nav(page,'settings');await importFile(page,'import-calendar','agenda.ics','BEGIN:VCALENDAR\nBEGIN:VEVENT\nUID:synthetic\nDTSTART:20261023T080000\nDTEND:20261023T090000\nSUMMARY:Estudo MEP230 Hill\nEND:VEVENT\nEND:VCALENDAR');assert.equal((await data(page)).imports.calendar.source,'ICS local');await importFile(page,'import-notion','erros.csv','Matéria,Conteúdo,Regra para próxima vez\nMEP230,Hill,Conferir unidades');assert.equal((await data(page)).imports.notion.error_records.length,1);check(`JSON/ICS/CSV e múltiplos blocos ${viewport.width}`);
+  await nav(page,'progress');await nav(page,'prep');await page.locator('#prep-topic').selectOption('Critério de Hill');await page.locator('#prep-count').selectOption('1');await page.locator('#prep-stage').selectOption('P3');await act(page,'start-sim').click();await act(page,'pick').first().click();await act(page,'confidence').filter({hasText:'75%'}).click();await act(page,'assess').click();assert.equal((await data(page)).activeSim.ids.length,1);
+  await page.reload();await nav(page,'home');await act(page,'resume-sim').click();assert.equal(await page.locator('.explanation').count(),1);await act(page,'next-quiz').click();assert((await page.locator('body').innerText()).includes('Resultado do treino'));assert.equal((await data(page)).simHistory.length,1);assert.equal((await data(page)).simHistory[0].stage,'P3');assert.equal((await data(page)).activeSim,null);check(`simulado configurado/retomada/histórico ${viewport.width}`);
+  await nav(page,'feed');await page.locator('[data-act="feed-filter"][data-sub="ELE010"]').click();
+  for(let n=0;n<12&&!(await act(page,'feed-answer').count());n++)await act(page,'next-feed').click();assert(await act(page,'feed-answer').count());assert(await act(page,'feed-answer').first().isDisabled());const title=await page.locator('.feedbody h2').innerText();const before=(await data(page)).attempts.length;await act(page,'feed-confidence').first().click();await act(page,'feed-answer').first().click();assert.equal(await page.locator('.feedbody h2').innerText(),title);assert.equal((await data(page)).attempts.length,before+1);await act(page,'next-feed').click();await act(page,'prev-feed').click();assert(await act(page,'feed-answer').first().isDisabled());assert.equal((await data(page)).attempts.length,before+1);check(`feed estável/confiança/não duplica ${viewport.width}`);
+  await act(page,'session-options').click();await page.locator('[data-act="set-duration"][data-value="5"]').click();await act(page,'start-session').click();await page.clock.fastForward(5*60*1000+1000);assert.equal(await page.locator('.modal h2').innerText(),'Sessão concluída');await act(page,'close-modal').first().click();await page.clock.fastForward(2000);assert.equal(await page.locator('.modal').count(),0);check(`sessão expira uma vez ${viewport.width}`);
+  await page.locator('[data-act="feed-filter"][data-sub="MED120"]').click();
+  const swipe=async selector=>page.locator(selector).evaluate(el=>{for(const [type,y] of [['touchstart',400],['touchend',200]]){const ev=new Event(type,{bubbles:true});Object.defineProperty(ev,'changedTouches',{value:[{screenX:100,screenY:y}]});el.dispatchEvent(ev)}});
+  const swipeTitle=await page.locator('.feedbody h2').innerText();await swipe('.feedart');assert.notEqual(await page.locator('.feedbody h2').innerText(),swipeTitle);
+  for(let n=0;n<10&&!(await page.locator('#mass').count());n++)await act(page,'next-feed').click();assert(await page.locator('#mass').count());const sliderTitle=await page.locator('.feedbody h2').innerText();await swipe('#mass');assert.equal(await page.locator('.feedbody h2').innerText(),sliderTitle);await page.locator('#mass').evaluate(el=>{el.value='8';el.dispatchEvent(new Event('input',{bubbles:true}))});assert.equal(await page.locator('#massnum').innerText(),'8');assert.equal(await page.locator('.oscillating').evaluate(el=>getComputedStyle(el).animationName),'none');
+  await page.locator('[data-act="feed-filter"][data-sub="all"]').click();await page.evaluate(()=>{for(let i=0;i<window.ORBITA_DATA.feed.length;i++)document.querySelector('[data-act="next-feed"]').click()});assert.equal(await page.locator('.modal h2').innerText(),'Sessão concluída');await act(page,'close-modal').first().click();check(`swipe/slider/movimento reduzido/feed finito ${viewport.width}`);
+  for(const name of ['study','progress','settings','daily','feed']){await nav(page,name);assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth));}
+  await nav(page,'study');await nav(page,'progress');await page.goBack();assert.equal(await page.locator('h1').innerText(),'Suas matérias');await page.locator('.subject').last().click();const subjectTitle=await page.locator('h1').innerText();await nav(page,'progress');await page.goBack();assert.equal(await page.locator('h1').innerText(),subjectTitle);await page.reload();assert.equal(await page.locator('h1').innerText(),subjectTitle);check(`layout/navegação voltar ${viewport.width}`);
+  await nav(page,'home');await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await context.setOffline(true);await page.reload();await page.locator('.subject').first().waitFor();assert.equal(await page.locator('.subject').count(),9);await nav(page,'quiz');await act(page,'pick').first().click();await act(page,'confidence').first().click();await act(page,'assess').click();const offlineCount=(await data(page)).attempts.length;await page.reload();assert.equal((await data(page)).attempts.length,offlineCount);await context.setOffline(false);check(`offline abre/responde/persiste ${viewport.width}`);
+  assert.deepEqual(errors,[]);assert.deepEqual(external,[]);check(`sem exceções ou envio externo de dados ${viewport.width}`);await context.close();
+ }
+ // Consulta sem tentativa não fabrica erro nem percentual de acerto.
+ {
+  const context=await browser.newContext(),page=await context.newPage();await page.goto(url);await nav(page,'quiz');await act(page,'reveal').click();await nav(page,'progress');assert.equal(await page.locator('.stats .stat strong').nth(1).innerText(),'—');assert((await page.locator('body').innerText()).includes('consultou resolução'));await context.close();check('consulta não fabrica erro ou taxa de acerto');
+ }
+ // Importação trata conteúdo acadêmico como texto, sem execução ou cache privado.
+ {
+  const context=await browser.newContext(),page=await context.newPage();await page.goto(url);await nav(page,'settings');
+  await importFile(page,'import-notion','safe.json',{grades:[],error_records:[{subject:'MEP230',topic:'Hill',next_rule:'<img id="unsafe-import" src=x onerror="alert(1)">SYNTHETIC_PRIVATE_MARKER'}]});
+  await nav(page,'progress');await nav(page,'prep');assert.equal(await page.locator('#unsafe-import').count(),0);assert((await page.locator('body').innerText()).includes('SYNTHETIC_PRIVATE_MARKER'));
+  await page.evaluate(()=>navigator.serviceWorker.ready);const leaked=await page.evaluate(async()=>{for(const name of await caches.keys()){for(const request of await (await caches.open(name)).keys()){const response=await (await caches.open(name)).match(request);if((await response.text()).includes('SYNTHETIC_PRIVATE_MARKER'))return true}}return false});assert.equal(leaked,false);
+  await context.close();check('importação escapada e nenhum dado privado no cache SW');
+ }
+ // Armazenamento corrompido permanece recuperável e nunca é sobrescrito silenciosamente.
+ {
+  const context=await browser.newContext(),page=await context.newPage();await page.goto(url);await page.evaluate(key=>localStorage.setItem(key,'{corrompido'),KEY);await page.reload();assert((await page.locator('[role="alert"]').innerText()).includes('não pôde ser lido'));await nav(page,'feed');assert.equal(await page.evaluate(key=>localStorage.getItem(key),KEY),'{corrompido');await context.close();check('armazenamento corrompido preservado');
+ }
+ // Falha de quota ao importar não substitui o progresso anterior nem anuncia sucesso.
+ {
+  const context=await browser.newContext(),page=await context.newPage();await page.goto(url);await nav(page,'quiz');await act(page,'pick').first().click();await act(page,'confidence').first().click();await act(page,'assess').click();const previous=await data(page);page.on('dialog',d=>d.accept());await nav(page,'settings');await page.evaluate(()=>{Storage.prototype.setItem=function(){throw new DOMException('Quota','QuotaExceededError')}});await importFile(page,'backupimport','quota.json',{app:'orbita-estudos',version:1,data:{attempts:[],exams:[]}});assert.equal((await data(page)).attempts.length,previous.attempts.length);await nav(page,'settings');assert(await page.locator('[role="alert"]').count());await context.close();check('quota: restauração transacional preserva dados');
+ }
+ // Duas abas não sobrescrevem mudanças silenciosamente.
+ {
+  const context=await browser.newContext(),p1=await context.newPage(),p2=await context.newPage();await p1.goto(url);await p2.goto(url);await p1.evaluate(key=>localStorage.setItem(key,JSON.stringify({attempts:[],exams:[]})),KEY);await p2.locator('[role="alert"]').waitFor();await nav(p2,'feed');assert.equal((await data(p2)).feedViewed,undefined);await context.close();check('concorrência entre abas bloqueia sobrescrita');
+ }
+ // Atualização real: instala SW 1.3, registra progresso, oferece 1.4 e aplica sem apagar.
+ {
+  serveLegacy=true;const context=await browser.newContext(),page=await context.newPage();page.on('dialog',d=>d.accept());await page.goto(url);await page.evaluate(()=>navigator.serviceWorker.ready);await page.reload();await nav(page,'quiz');await act(page,'pick').first().click();await act(page,'confidence').first().click();await act(page,'assess').click();const count=(await data(page)).attempts.length;serveLegacy=false;await page.reload();await nav(page,'settings');await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();await r.update()});await page.waitForFunction(async()=>!!(await navigator.serviceWorker.getRegistration())?.waiting);await Promise.all([page.waitForEvent('load'),act(page,'activate-update').click()]);await page.waitForFunction(()=>window.ORBITA_DATA?.version==='1.4.0');assert.equal((await data(page)).attempts.length,count);await context.setOffline(true);await page.reload();assert.equal(await page.evaluate(()=>window.ORBITA_DATA.version),'1.4.0');assert.equal((await data(page)).attempts.length,count);await context.close();check('migração SW 1.3 → 1.4 e offline preservam progresso');
+ }
+ fs.writeFileSync(path.join(root,'BROWSER-RESULTS.json'),JSON.stringify({browser:'Chromium',executedAt:new Date().toISOString(),results},null,2));console.log(JSON.stringify(results,null,2));
+})().catch(e=>{console.error(e);process.exitCode=1}).finally(async()=>{if(browser)await browser.close();server.close()});

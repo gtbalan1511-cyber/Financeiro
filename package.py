@@ -1,23 +1,29 @@
-"""Empacota somente arquivos permitidos; não inclui dados pessoais nem ferramentas locais."""
+"""Gera pacotes públicos por allowlist, sem dados acadêmicos ou dependências locais."""
 from pathlib import Path
 from zipfile import ZipFile, ZIP_DEFLATED
-import json, subprocess
+import hashlib,json,subprocess
 root=Path(__file__).parent
-subprocess.run(['python','test_static.py'],cwd=root,check=True)
-out=root/'dist';out.mkdir(exist_ok=True)
+version=json.loads((root/'package.json').read_text())['version']
+for command in [['node','--test','tests/core.test.cjs'],['node','test_logic.cjs'],['python','test_static.py']]:
+ subprocess.run(command,cwd=root,check=True)
 site=root/'site'
-with ZipFile(out/'Orbita-Netlify-1.3.0.zip','w',ZIP_DEFLATED) as z:
- for p in sorted(site.rglob('*')):
-  if p.is_file():z.write(p,p.relative_to(site))
-files=['AGENTS.md','PRODUTO-E-ACEITE.md','NEXT-STEPS.md','CHANGELOG.md','TEST-REPORT.md','TEST-RESULTS.json','BROWSER-RESULTS.json','README.md','package.json','package-lock.json','package.py','test_logic.cjs','test_static.py']
-with ZipFile(out/'Orbita-Codigo-Fonte-1.3.0.zip','w',ZIP_DEFLATED) as z:
+allowed={'index.html','app.js','features.js','data.js','style.css','sw.js','manifest.webmanifest','_headers','robots.txt','LEIA-ME.md','assets/icon-192.png','assets/icon-512.png'}
+actual={str(p.relative_to(site)) for p in site.rglob('*') if p.is_file()}
+assert actual==allowed, f'Arquivos inesperados/ausentes em site/: {actual^allowed}'
+out=root/'dist';out.mkdir(exist_ok=True)
+for p in out.glob('Orbita-*.zip'):p.unlink() # Somente artefatos anteriores gerados por este script.
+with ZipFile(out/f'Orbita-Netlify-{version}.zip','w',ZIP_DEFLATED) as z:
+ for name in sorted(allowed):z.write(site/name,name)
+files=['.gitignore','netlify.toml','AGENTS.md','PRODUTO-E-ACEITE.md','NEXT-STEPS.md','CHANGELOG.md','TEST-REPORT.md','TEST-RESULTS.json','BROWSER-RESULTS.json','README.md','AUDIT-1.4.md','INTEGRATIONS.md','PR-DESCRIPTION.md','package.json','package-lock.json','package.py','test_logic.cjs','test_static.py']
+with ZipFile(out/f'Orbita-Codigo-Fonte-{version}.zip','w',ZIP_DEFLATED) as z:
  for name in files:
   p=root/name
   if p.exists():z.write(p,name)
- for folder in ['site','tests']:
+ for folder in ['site','tests','.github']:
   for p in sorted((root/folder).rglob('*')):
    if p.is_file():z.write(p,p.relative_to(root))
-with ZipFile(out/'Orbita-Netlify-1.3.0.zip') as z:
- assert 'index.html' in z.namelist()
- assert all(not n.startswith(('tests/','_contexto_privado/')) for n in z.namelist())
-print('ZIPs criados em',out)
+with ZipFile(out/f'Orbita-Netlify-{version}.zip') as z:
+ assert set(z.namelist())==allowed and 'index.html' in z.namelist()
+manifest={'version':version,'files':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in sorted(out.glob('*.zip'))}}
+(out/'SHA256.json').write_text(json.dumps(manifest,indent=2)+'\n')
+print('Pacotes públicos criados em',out)
