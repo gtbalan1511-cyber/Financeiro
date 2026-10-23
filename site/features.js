@@ -64,7 +64,10 @@ window.ORBITA_FEATURES = (() => {
   function validCalendar(j){return obj(j)&&rows(j.study_events,e=>validDate(e.date)&&text(e.subject)&&text(e.title)&&/^([01]\d|2[0-3]):[0-5]\d$/.test(e.start))}
   function validNotion(j){return obj(j)&&rows(j.error_records,e=>text(e.subject)&&text(e.topic))&&rows(j.grades,g=>text(g.subject)&&(g.p1==null||Number.isFinite(g.p1)&&g.p1>=0&&g.p1<=10))}
   function validDrive(j){return obj(j)&&['sources','subjects','folders'].some(k=>Array.isArray(j[k]))&&['sources','subjects','folders','verified_documents'].every(k=>j[k]===undefined||rows(j[k],x=>['url','drive_folder'].every(k=>x[k]===undefined||https(x[k]))))}
-  function legacyValidState(j){return obj(j)&&['attempts','reviewed','savedFeed','feedViewed','exams','customLinks','dailyAttempts'].every(k=>j[k]===undefined||Array.isArray(j[k]))&&rows(j.attempts,a=>text(a.qid)&&text(a.subject)&&text(a.topic)&&typeof a.correct==='boolean')&&rows(j.exams,e=>text(e.id)&&text(e.subject)&&text(e.title)&&validDate(e.date))&&(!j.customLinks||rows(j.customLinks,l=>text(l.subject)&&text(l.title)&&https(l.url)))&&(!j.notes||obj(j.notes))&&(!j.settings||obj(j.settings))&&(!j.imports||obj(j.imports)&&['calendar','notion','drive'].every(k=>j.imports[k]==null||({calendar:validCalendar,notion:validNotion,drive:validDrive})[k](j.imports[k])))}
+  function legacyValidState(j){return obj(j)&&['attempts','reviewed','savedFeed','feedViewed','exams','customLinks','dailyAttempts'].every(k=>j[k]===undefined||Array.isArray(j[k]))&&(j.unavailableContent===undefined||Array.isArray(j.unavailableContent)&&j.unavailableContent.every(str))&&(j.sessionSerial===undefined||Number.isSafeInteger(j.sessionSerial)&&j.sessionSerial>=0)&&
+    (j.privateCards===undefined||rows(j.privateCards,x=>/^private-[-\w]+$/.test(x.id)&&window.ORBITA_DATA.subjects.some(s=>s.id===x.subject)&&str(x.body)&&str(x.title)&&x.private===true&&x.format==='lesson'&&Number.isFinite(x.durationSeconds)&&Array.isArray(x.prerequisites)))&&
+    (j.contentEvents===undefined||rows(j.contentEvents,e=>str(e.contentId)&&Number.isFinite(e.at)&&['shown','completed','answered'].includes(e.kind)))&&
+    rows(j.attempts,a=>text(a.qid)&&text(a.subject)&&text(a.topic)&&typeof a.correct==='boolean')&&rows(j.exams,e=>text(e.id)&&text(e.subject)&&text(e.title)&&validDate(e.date))&&(!j.customLinks||rows(j.customLinks,l=>text(l.subject)&&text(l.title)&&https(l.url)))&&(!j.notes||obj(j.notes))&&(!j.settings||obj(j.settings))&&(!j.imports||obj(j.imports)&&['calendar','notion','drive'].every(k=>j.imports[k]==null||({calendar:validCalendar,notion:validNotion,drive:validDrive})[k](j.imports[k])))}
   function p2Needed(g,target=5){if(!g||!Number.isFinite(g.p1))return null;const p1=g.p1;switch(g.subject){
     case 'MEP230':return (target-.4*p1)/.6;
     case 'MEE120':return (target-.35*p1)/.65;
@@ -95,6 +98,9 @@ Object.assign(window.ORBITA_FEATURES, (()=>{
   function validDrive(j){return object(j)&&['sources','subjects','folders'].some(k=>Array.isArray(j[k]))&&['sources','subjects','folders','verified_documents'].every(k=>j[k]===undefined||rows(j[k],x=>['url','drive_folder'].every(k=>x[k]===undefined||https(x[k]))))}
   function safeTree(x,depth=0){if(depth>25)return false;if(!x||typeof x!=='object')return true;return Object.keys(x).every(k=>!['__proto__','constructor','prototype'].includes(k)&&safeTree(x[k],depth+1))}
   function validState(j){return object(j)&&safeTree(j)&&
+    (j.unavailableContent===undefined||Array.isArray(j.unavailableContent)&&j.unavailableContent.every(str))&&(j.sessionSerial===undefined||Number.isSafeInteger(j.sessionSerial)&&j.sessionSerial>=0)&&
+    (j.privateCards===undefined||rows(j.privateCards,x=>/^private-[-\w]+$/.test(x.id)&&window.ORBITA_DATA.subjects.some(s=>s.id===x.subject)&&str(x.body)&&str(x.title)&&x.private===true&&x.format==='lesson'&&Number.isFinite(x.durationSeconds)&&Array.isArray(x.prerequisites)))&&
+    (j.contentEvents===undefined||rows(j.contentEvents,e=>str(e.contentId)&&Number.isFinite(e.at)&&['shown','completed','answered'].includes(e.kind)))&&
     rows(j.attempts,a=>str(a.qid)&&str(a.subject)&&str(a.topic)&&typeof a.correct==='boolean'&&conf(a.confidence)&&(a.reviewDue===undefined||date(a.reviewDue)))&&
     rows(j.exams,e=>str(e.id)&&str(e.subject)&&str(e.title)&&date(e.date))&&
     ['savedFeed','feedViewed'].every(k=>j[k]===undefined||Array.isArray(j[k])&&j[k].length<=20000&&j[k].every(str))&&
@@ -105,7 +111,7 @@ Object.assign(window.ORBITA_FEATURES, (()=>{
     (j.reviewLog===undefined||rows(j.reviewLog,a=>str(a.id)&&str(a.subject)&&str(a.topic)&&date(a.date)))&&
     (j.activeSim==null||object(j.activeSim)&&str(j.activeSim.id)&&str(j.activeSim.subject)&&Array.isArray(j.activeSim.ids)&&j.activeSim.ids.length>0&&j.activeSim.ids.every(str)&&Number.isInteger(j.activeSim.index)&&j.activeSim.index>=0&&j.activeSim.index<j.activeSim.ids.length)&&
     (j.notes===undefined||object(j.notes)&&Object.values(j.notes).every(str))&&
-    (j.settings===undefined||object(j.settings)&&['5','10','15',undefined].includes(j.settings.duration))&&
+    (j.settings===undefined||object(j.settings)&&['5','10','15','30',undefined].includes(j.settings.duration))&&
     (j.imports===undefined||object(j.imports)&&['calendar','notion','drive'].every(k=>j.imports[k]==null||({calendar:validCalendar,notion:validNotion,drive:validDrive})[k](j.imports[k])))}
   const latest=arr=>[...new Map(arr.map(a=>[a.qid||a.id,a])).values()];
   function schedule(previous,correct,help,confidence,day){

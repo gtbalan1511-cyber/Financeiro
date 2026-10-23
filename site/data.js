@@ -174,5 +174,5 @@ window.ORBITA_DATA = (() => {
     ['MEI150','Se falta dado no projeto, não invente','Liste hipóteses e propriedades adotadas; uma planilha confiável torna a origem de cada parâmetro auditável.','reflexão','Relatórios e entregas']
   ];
   const feed=feedTopics.map(([subject,title,body,type,topic],i)=>({id:`feed${i+1}`,subject,title,body,type,topic}));
-  return {subjects,questions,flashcards,feed,sources,version:'1.4.0',updated:'2026-10-23'};
+  return {subjects,questions,flashcards,feed,sources,version:'1.5.0',updated:'2026-10-23'};
 })();

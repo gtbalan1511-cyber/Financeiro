@@ -1,13 +1,9 @@
-# Órbita Estudos 1.4.0
+# Órbita Estudos 1.5.0
 
-Publique somente o ZIP Netlify (index.html na raiz) em HTTPS. O site é estático e gratuito; dados pessoais permanecem no navegador e entram no backup privado exportado.
+PWA com catálogo expansível de 402 atividades, feed adaptativo, sessões 5/15/30, desafios e 36 simulações. São 153 conceitos autorais e 60 referências de vídeos acadêmicos. IDs e títulos dos vídeos foram conferidos em fonte oficial; reprodução e durações exatas não foram verificadas nesta rede. Vídeos exigem internet e são carregados por escolha do usuário.
 
-Safari no iPhone → Compartilhar → Adicionar à Tela de Início. Abra online uma vez para preparar offline. Em Configurações, exporte backup antes de atualizar ou limpar dados. Verifique atualizações e aplique quando não houver simulado ativo.
+Publique somente este conteúdo estático em HTTPS. Para OAuth Calendar/Notion/Drive, publicar o projeto Git completo com funções Netlify e configurar as contas no servidor; o ZIP estático não instala backend. Nenhuma conta está conectada por padrão. Não cole tokens ou IDs no app.
 
-Exam Prep configura matéria, conteúdo, P2/P3 e quantidade. Simulados em andamento podem ser retomados; resultados ficam no histórico. Revisão espaçada é baseada em confiança e tentativas independentes.
+No Safari: Compartilhar → Adicionar à Tela de Início. Abra online uma vez e teste offline. Exporte backup antes de atualizar. Safari físico ainda requer validação. Dados e trechos privados ficam locais e não devem ser publicados; a senha do servidor não cifra o armazenamento local.
 
-Importe sua agenda JSON ou ICS de eventos únicos e erros do Notion JSON/CSV em Configurações. Sem OAuth: são cópias locais, não sincronização automática. Inclua códigos das disciplinas nos eventos de estudo. ICS recorrente/TZID exige JSON expandido. Não publique seus snapshots ou backups.
-
-Para você oferece sessões finitas, desafios, diagramas e simuladores. Vídeos, PDFs e IA generativa não estão integrados. Banco autoral introdutório, sem afiliação à FEI e sem promessa de notas oficiais.
-
-Offline e persistência foram testados em Chromium. Safari/iPhone real ainda requer validação no aparelho. Não há sincronização entre dispositivos. A limpeza de dados do navegador pode apagar o progresso; mantenha backups.
+Conteúdo introdutório autoral/curado, sem afiliação à FEI. Revisão pedagógica humana pendente. Simulações são educacionais, não ferramentas de dimensionamento certificado.
