@@ -1,44 +1,42 @@
-# Validação — Órbita 1.4.0 — 23/10/2026
+# Validação 1.5.0 — 23/10/2026
 
-Ambiente: Linux, Node.js 24.19.0, Python 3.12.14, Playwright 1.62.1 e Chromium headless. Projeto/CI também prevê Node 22; essa versão não foi executada localmente.
+Linux, Node 24.19.0, Python 3.12, Playwright 1.62.1, Chromium headless. Não executado Safari físico.
 
-## Comandos e resultados
+## Testes executados
 
-| Verificação | Comando | Resultado |
-| --- | --- | --- |
-| Dependências reprodutíveis | `npm ci --ignore-scripts --cache /workspace/orbita-tools/npm-cache` | Concluído pelo lockfile |
-| Unitários | `TZ=America/Sao_Paulo node --test tests/core.test.cjs` | 21/21 aprovados, sem skips |
-| Integração e regressão por VM | `TZ=America/Sao_Paulo node test_logic.cjs` | 26/26 aprovados |
-| Sintaxe, PWA e privacidade estática | `python test_static.py` | 11/11 aprovados |
-| Navegador | `npm run test:browser` | 26 cenários aprovados; mobile 390×844 e desktop 1440×900, mais falhas/migração |
-| Aplicação iniciada | `npm start` e requisições locais | HTML, manifest e data.js versão 1.4.0 disponíveis |
-| Empacotamento | `npm run build` | ZIP-fonte, ZIP-Netlify e hashes; allowlist de 12 arquivos públicos |
+- `npm test`: **45 testes Node** (21 regras base, 10 catálogo/recomendação/modelos e 14 backend com mocks), **26 testes de integração/regressão por VM** e **15 verificações estáticas**. Sem skips na execução final.
+- `npm run test:browser`: **28 cenários** Chromium. Mobile 390×844 e desktop 1440×900, quiz/confiança, simulado retomável, backup/restauração, dados manuais, sessão, swipe/controles, layout/Voltar, offline/persistência, concorrência, quota e dados corrompidos. Cenários adicionais carregam catálogo substancial, exercitam os **36 modelos no DOM**, simulam vídeo indisponível/catálogo insuficiente, preservam dados privados fora do cache e migram SW 1.3 → 1.5 mantendo progresso.
+- `npm run test:usage`: cenários de uso **sintéticos**, com respostas geradas por código. Não se trata de estudo humano real. Resultados completos em FEED-SIMULATION-RESULTS.json.
+- `python tools/verify-video-sources.py`: **60/60 fontes oficiais retornaram HTTP 200 e corresponderam ao ID/título**, em commits fixos MIT OCW. Resultado em VIDEO-VERIFICATION-RESULTS.json. Reprodução e duração exata dos vídeos: **não verificadas**. YouTube/oEmbed e site MIT direto retornaram HTTP 403; repositórios oficiais públicos no GitHub foram acessíveis.
+- `npm run build`: validação e pacotes por allowlist. ZIP Netlify contém somente assets públicos; código de funções e documentação ficam no ZIP-fonte/Git. ZIP estático não ativa backend. Integridade dos dois ZIPs conferida; o ZIP-fonte foi extraído e `npm test` passou novamente. O servidor local respondeu com catálogo 1.5.0 de 402 itens.
 
-Os ZIPs foram abertos e tiveram integridade verificada; o ZIP-fonte foi extraído em diretório temporário e seus 21 unitários, 26 testes de regressão e 11 verificações estáticas passaram novamente.
+## Uso sintético com o catálogo final de 402 atividades
 
-Os resultados detalhados estão em TEST-RESULTS.json (regressão) e BROWSER-RESULTS.json (execução de navegador atual). Unitários usam o runner nativo Node e saída de execução. A regressão original continua coberta, com atualização das expectativas para retomada persistente e agrupamento das tentativas por questão; nenhuma asserção foi desabilitada.
+| Cenário | Exibições | Itens únicos | Repetições | Desafios respondidos pelo simulador |
+| --- | ---: | ---: | ---: | ---: |
+| Uma sessão de 30 min | 8 | 8 | 0 | 4 |
+| Três sessões no dia | 36 | 36 | 0 | 13 |
+| Sete dias, 3 sessões/dia | 306 | 179 | 127 | 132 |
+| Trinta dias, 3 sessões/dia | 1346 | 375 | 971 | 587 |
 
-## Cobertura funcional efetivamente executada
+Nos cenários longos houve cobertura das nove disciplinas e quatro formatos. Os vinte vídeos longos não cabem em 30 minutos e ficam fora dessas filas; há no máximo 382 itens elegíveis para essas filas. Nesta execução, 375 foram exibidos: sete elegíveis ainda não foram selecionados, pois as dificuldades e revisões receberam prioridade. Não se afirma cobertura integral de todo item em 30 dias. Repetições incluem revisão intencional; o relatório registra justificativas. A quantidade de recomendações marcadas como revisão não coincide necessariamente com repetições de item, pois um conceito pode reaparecer em outro formato ainda inédito.
 
-- Configuração de simulado por conteúdo/quantidade/P3, resposta com confiança, reload, retomada na questão corrigida, conclusão e histórico sem duplicação.
-- JSONs sintéticos Calendar/Notion/Drive, ICS e CSV, troca entre dois blocos de estudo, resolução e autoavaliação diárias; regras de recorrência, fuso UTC/local e aulas genéricas em unitários.
-- Revisão progressiva 3/7/14/30/60, reinício após dificuldade, datas bissextas, filtro de conteúdo, ranking por erro ativo e repetição no mesmo dia sem falsa retenção.
-- Feed com confiança, cartão estável após responder, retorno sem duplicar evidência, swipe sintético, slider sem acionar swipe, movimento reduzido, término finito e timer expirando uma única vez.
-- Navegação Voltar e recarga na disciplina selecionada; páginas verificadas sem overflow horizontal nos dois tamanhos.
-- Download e restauração real de backup, rejeição de backup inválido, abertura/resposta/reabertura offline mantendo progresso.
-- Falha de quota simulada no Storage: importação não substitui dados anteriores; dados corrompidos preservados; conflito entre duas abas impede sobrescrita silenciosa.
-- Texto importado com marcação HTML fica escapado; marcador sintético privado não aparece em caches do SW; nenhuma requisição externa ou exceção JS nos fluxos principais.
-- Migração de um SW real 1.3 (fixture de código público do Git) para 1.4, ativação pelo botão, progresso preservado e nova versão funcionando offline.
-- Estruturas nulas, poluição de protótipo, URLs executáveis/credenciais e dados inconsistentes rejeitados; banco com IDs únicos e gabaritos/referências válidos.
+Retorno em 20 minutos sem repetir itens, revisão em formato alternativo, catálogo insuficiente sem fabricar fila, vídeo indisponível excluído e evidência de domínio em dias distintos têm asserções específicas nos testes. O teste de vídeo indisponível usa fixture sintética; não simula prova de remoção de um vídeo real do MIT.
 
-## Falhas encontradas durante a rodada
+## Modelos
 
-Corrigidas: aviso de quota sem atualização imediata de tela, estado/ordem de resposta do feed, repetição do resumo por timer vencido, retomada/histórico ausentes, navegação de disciplinas e contagem de consulta como erro. Também foram corrigidas as configurações do teste para aceitar explicitamente o diálogo de restauração e aguardar conclusão das leituras de arquivos. As execuções finais passaram após essas correções.
+36 modelos avaliados em defaults e extremos, sem NaN/Infinity. Cada controle altera resultado ou curva. Valores de referência independentes conferidos para oscilador livre, parede plana, circuito estrela e alongamento axial. Testes de todos os controles não equivalem a auditoria completa de cada equação física; revisão técnica humana permanece pendente. Gráficos são calculados de parâmetros reais, com escalas e hipóteses; animação SVG respeita movimento reduzido.
 
-## Limites da evidência
+## Backend
 
-- Safari/iPhone físico e instalação standalone não executados. WebKit não está instalado; seu download havia retornado HTTP 403 nesta máquina. Gestos automatizados são sintéticos e não comprovam ergonomia física.
-- Sem publicação HTTPS nova nem verificação do domínio Netlify com 1.4. Não há acesso de deploy conectado. Headers são verificados estaticamente e CSP é aplicada no servidor do teste; não se afirma que foram aplicados na hospedagem.
-- Sem OAuth/servidor privado Calendar/Notion: integrações ao vivo não foram executadas nem declaradas concluídas. Todos os dados dos testes são sintéticos.
-- Não é auditoria completa de segurança nem revisão pedagógica de todo conteúdo. Pressão real de armazenamento/expulsão pelo iOS e sincronização entre aparelhos não testadas.
-- CI remota não foi confirmada: a API GitHub retornou Forbidden. Resultados acima são da máquina desta sessão.
+Mocks exercitam: servidor não configurado falha fechado, login/origem, cookies cifrados e expiração, Google OAuth state/PKCE, callback inválido, troca de código sem expor token, classificação Calendar/fuso/paginação, leitura/deduplicação Notion, limite de pasta Drive, extração de texto com origem e recusa de PDF não suportado. Não há operação de escrita Notion.
+
+**Google, Notion, Drive e Netlify reais não foram autenticados ou publicados.** Não se declara integração ativa, compatibilidade com esquemas reais ou aceite OAuth com base em mocks. A API GitHub também retornou Forbidden; CI remota não confirmada.
+
+## Problemas investigados nesta rodada
+
+Corrigidos: controles decorativos removidos, duas explicações muito curtas ampliadas, aliases de vídeo deduplicados, validação do catálogo adaptada à identidade do vídeo, referências de desafios resolvidas por ID, restauração de simulados aguardando catálogo, proteção de atualização durante sessão e espera pelo SW ativado antes de recarregar. O teste de migração tinha uma espera intermitente em evento de página; a checagem final observa a troca real do SW/caches e testa a nova versão offline com o mesmo progresso.
+
+## Não executados / limites
+
+Safari/iPhone físico, reprodução real do YouTube, OAuth e APIs de contas reais, publicação HTTPS nova, extração de PDF/OCR e sync com app fechado. Não houve geração de dados acadêmicos pessoais para preencher resultados. Relatórios distinguem metadados públicos reais, conteúdo autoral e testes sintéticos.

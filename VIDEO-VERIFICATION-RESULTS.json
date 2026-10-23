@@ -1,0 +1,609 @@
+{
+  "checkedAt": "2026-10-23T14:50:14.904430+00:00",
+  "sourceVerified": 60,
+  "playbackVerified": 0,
+  "durationVerified": 0,
+  "notice": "Verificação de identidade/título em fonte oficial. Durações são estimadas. Reprodução atual e licença individual não validadas.",
+  "items": [
+    {
+      "youtubeId": "ZNVvYg1FOPk",
+      "mediaUrl": "https://www.youtube.com/watch?v=ZNVvYg1FOPk",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/a-review-of-newtons-three-laws-of-motion.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "A review of Newton's three laws of motion",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "NHedXxUO-Bg",
+      "mediaUrl": "https://www.youtube.com/watch?v=NHedXxUO-Bg",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/a-review-of-the-principle-of-linear-momentum-and-impulse.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "A review of the principle of linear momentum and impulse ",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "GUvoVvXwoOQ",
+      "mediaUrl": "https://www.youtube.com/watch?v=GUvoVvXwoOQ",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/an-example-deriving-equations-of-motion-using-newtons-laws.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "An example deriving equations of motion using Newton's laws",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "fK9AGvLf3yw",
+      "mediaUrl": "https://www.youtube.com/watch?v=fK9AGvLf3yw",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/analysis-of-the-response-of-a-2-dof-system-to-harmonic-excitation-by-means-of-transfer-functions-and-the-introduction-of-the-.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Analysis of the response of a 2-DOF system to harmonic excitation by means of transfer functions and the introduction of the application of the dynamic absorber to mitigate problem vibration",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Fo-Y6kEMURk",
+      "mediaUrl": "https://www.youtube.com/watch?v=Fo-Y6kEMURk",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/angular-momentum-for-rigid-bodies-and-the-mass-moment-of-inertia-matrix-i.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Angular momentum for rigid bodies and the mass moment of inertia matrix, [I]",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "iMz0LiqjFmE",
+      "mediaUrl": "https://www.youtube.com/watch?v=iMz0LiqjFmE",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/angular-momentum-of-a-particle-torque-as-the-time-rate-of-change-of-angular-momentum-and-the-appearance-of-the-coriolis-force.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Angular momentum of a particle, torque as the time rate of change of angular momentum, and the appearance of the coriolis force",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "1xJJu5p3dD0",
+      "mediaUrl": "https://www.youtube.com/watch?v=1xJJu5p3dD0",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/application-of-the-wave-equation-to-rods-organ-pipes-shower-stalls-with-demonstrations.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Application of the wave equation to rods, organ pipes, shower stalls with demonstrations",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "f1pxiNDTyHc",
+      "mediaUrl": "https://www.youtube.com/watch?v=f1pxiNDTyHc",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/base-motion-hx-y-transfer-function-vibration-isolation-system-design.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Base motion Hx/y transfer function-vibration isolation system design",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "qrbCpv3Sv34",
+      "mediaUrl": "https://www.youtube.com/watch?v=qrbCpv3Sv34",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/cart-and-pendulum-2-dof-equations-of-motion.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Cart and pendulum 2 DOF equations of motion",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "mB_rrEN_Ltc",
+      "mediaUrl": "https://www.youtube.com/watch?v=mB_rrEN_Ltc",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/2.003sc-fall-2011/8a17c4c6d1970794042ff8a2fe14cdadbe92d14f/content/resources/class-1-rotation-about-fixed-axis-through-center-of-mass.md",
+      "sourceCommit": "8a17c4c6d1970794042ff8a2fe14cdadbe92d14f",
+      "title": "Class 1: Rotation about fixed axis through center of mass",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "AfQxyVuLeCs",
+      "mediaUrl": "https://www.youtube.com/watch?v=AfQxyVuLeCs",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-1.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 1: Introduction and Lumped Abstraction",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "9RqFFlZgf60",
+      "mediaUrl": "https://www.youtube.com/watch?v=9RqFFlZgf60",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-10.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 10: Amplifiers - Small Signal Model",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "R4KxlqsuZ0A",
+      "mediaUrl": "https://www.youtube.com/watch?v=R4KxlqsuZ0A",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-11.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 11: Small Signal Circuits",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "COdQmA9g9S8",
+      "mediaUrl": "https://www.youtube.com/watch?v=COdQmA9g9S8",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-12.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 12: Capacitors and First-Order Systems",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "TXJIhDHtHSI",
+      "mediaUrl": "https://www.youtube.com/watch?v=TXJIhDHtHSI",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-13.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 13: Digital Circuit Speed",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "bX8i2yECWaU",
+      "mediaUrl": "https://www.youtube.com/watch?v=bX8i2yECWaU",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-14.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 14: State and Memory",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "ypX20WnHNQw",
+      "mediaUrl": "https://www.youtube.com/watch?v=ypX20WnHNQw",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-15-part-1.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 15: Second-Order Systems (part 1)",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "-gRXU-O1FY4",
+      "mediaUrl": "https://www.youtube.com/watch?v=-gRXU-O1FY4",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-15-part-2.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 15: Second-Order Systems (part 2)",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "3GdMaDzIUeQ",
+      "mediaUrl": "https://www.youtube.com/watch?v=3GdMaDzIUeQ",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-16.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 16: Sinusoidal Steady State",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Km9YIdkc2Oo",
+      "mediaUrl": "https://www.youtube.com/watch?v=Km9YIdkc2Oo",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/6.002-spring-2007/4d7eed6bdd8b2f87640624efec5518eed4046e80/content/resources/lecture-17.md",
+      "sourceCommit": "4d7eed6bdd8b2f87640624efec5518eed4046e80",
+      "title": "Lecture 17: The Impedance Model",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "5ucfHd8FWKw",
+      "mediaUrl": "https://www.youtube.com/watch?v=5ucfHd8FWKw",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/0-1-vectors-vs.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "0.1 Vectors vs. Scalars",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Bq0fDYtbfBA",
+      "mediaUrl": "https://www.youtube.com/watch?v=Bq0fDYtbfBA",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/0-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "0.3 Coordinate Systems and Unit Vectors",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "pW6tqp1zRrg",
+      "mediaUrl": "https://www.youtube.com/watch?v=pW6tqp1zRrg",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/0-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "0.4 Vectors - Magnitude and Direction",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "VZm6mxu2xlk",
+      "mediaUrl": "https://www.youtube.com/watch?v=VZm6mxu2xlk",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/0-3.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "0.5 Vector Decomposition into Components",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "esHLwySu4XU",
+      "mediaUrl": "https://www.youtube.com/watch?v=esHLwySu4XU",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/0-4.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "0.6 Going Between Representations",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Jf2PgGInUEk",
+      "mediaUrl": "https://www.youtube.com/watch?v=Jf2PgGInUEk",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/0.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "0.2 Vector Operators",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "kJxsMnRZXqE",
+      "mediaUrl": "https://www.youtube.com/watch?v=kJxsMnRZXqE",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/1-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "1.2 Position Vector in 1D",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "W1lxlbJ0BZU",
+      "mediaUrl": "https://www.youtube.com/watch?v=W1lxlbJ0BZU",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/1-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "1.3 Displacement Vector in 1D",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "otGGuHt36XA",
+      "mediaUrl": "https://www.youtube.com/watch?v=otGGuHt36XA",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/1-3.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "1.4 Average Velocity in 1D",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "YdyhDdXaSP4",
+      "mediaUrl": "https://www.youtube.com/watch?v=YdyhDdXaSP4",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/1-4.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "1.5 Instantaneous Velocity in 1D",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "jtOxRPQDuJs",
+      "mediaUrl": "https://www.youtube.com/watch?v=jtOxRPQDuJs",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/1-5.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "1.7 Worked Example - Derivatives in Kinematics",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "ErlP_SBcA1s",
+      "mediaUrl": "https://www.youtube.com/watch?v=ErlP_SBcA1s",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "1.1 Coordinate Systems and Unit Vectors in 1D Position Vector in 1D",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "prCwfSiWuq0",
+      "mediaUrl": "https://www.youtube.com/watch?v=prCwfSiWuq0",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/10-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "10.2 Angular Acceleration",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "lufK0UlJ7aE",
+      "mediaUrl": "https://www.youtube.com/watch?v=lufK0UlJ7aE",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/10-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "10.3 Worked Example - Angular Position from Angular Acceleration",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "_0PrwAbgoMA",
+      "mediaUrl": "https://www.youtube.com/watch?v=_0PrwAbgoMA",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/10.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "10.1 Circular Motion \\u2013 Acceleration",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "ofgusnhQ07Q",
+      "mediaUrl": "https://www.youtube.com/watch?v=ofgusnhQ07Q",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/11-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "11.2 Worked Example - Car on a Banked Turn",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "WLHAaaGHfe8",
+      "mediaUrl": "https://www.youtube.com/watch?v=WLHAaaGHfe8",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/11-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "11.3 Demo: Rotating Bucket",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "tniGFmPQc0E",
+      "mediaUrl": "https://www.youtube.com/watch?v=tniGFmPQc0E",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/11.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "11.1 Newton's 2nd Law and Circular Motion",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "gWLC3r6EHl0",
+      "mediaUrl": "https://www.youtube.com/watch?v=gWLC3r6EHl0",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/12-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "12.2 Pulley Problem - Part II, Constraint Condition",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "GuiIyYbI0HM",
+      "mediaUrl": "https://www.youtube.com/watch?v=GuiIyYbI0HM",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/12-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "12.3 Pulley Problem - Part III, Constraints and Virtual Displacement Arguments",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "lw9W32ezQhM",
+      "mediaUrl": "https://www.youtube.com/watch?v=lw9W32ezQhM",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/12-3.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "12.4 Pulley Problem - Part IV, Solving the System of Equations",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "3V5y9uq5au0",
+      "mediaUrl": "https://www.youtube.com/watch?v=3V5y9uq5au0",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/12-4.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "12.5 Worked Example - 2 Blocks and 2 Pulleys",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "FNOfxJxceIM",
+      "mediaUrl": "https://www.youtube.com/watch?v=FNOfxJxceIM",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/12.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "12.1 Pulley Problems - Part I, Set up the Equations",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "NBOL5X13UFY",
+      "mediaUrl": "https://www.youtube.com/watch?v=NBOL5X13UFY",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/13-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "13.2 Differential Analysis of a Massive Rope",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "cadbtBS5qf4",
+      "mediaUrl": "https://www.youtube.com/watch?v=cadbtBS5qf4",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/13-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "13.3 Differential Elements",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "5QKJG0FZTio",
+      "mediaUrl": "https://www.youtube.com/watch?v=5QKJG0FZTio",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/13-3.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "13.4 Density",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Veyh-DhI8lE",
+      "mediaUrl": "https://www.youtube.com/watch?v=Veyh-DhI8lE",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/13-4.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "13.5 Demo: Wrapping Friction",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "vUg50UI1aqs",
+      "mediaUrl": "https://www.youtube.com/watch?v=vUg50UI1aqs",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/13-5.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "13.6 Summary of Differential Analysis",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "9NS0JcjNdp4",
+      "mediaUrl": "https://www.youtube.com/watch?v=9NS0JcjNdp4",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/13.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "13.1 Rope Hanging Between Trees",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "JTePtoM_MeM",
+      "mediaUrl": "https://www.youtube.com/watch?v=JTePtoM_MeM",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/14-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "14.2 Resistive Forces - Low Speed Case",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "flwYlUfw4WU",
+      "mediaUrl": "https://www.youtube.com/watch?v=flwYlUfw4WU",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/14-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "14.3 Resistive Forces - High Speed Case",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "30Ww1HsRblM",
+      "mediaUrl": "https://www.youtube.com/watch?v=30Ww1HsRblM",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/14.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "14.1 Intro to Resistive Forces",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "xtpW7fw8s34",
+      "mediaUrl": "https://www.youtube.com/watch?v=xtpW7fw8s34",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/15-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "15.2 Impulse is a Vector",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "bEpq3yjismU",
+      "mediaUrl": "https://www.youtube.com/watch?v=bEpq3yjismU",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/15-2.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "15.3 Worked Example - Bouncing Ball",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "sxv80X2jQYQ",
+      "mediaUrl": "https://www.youtube.com/watch?v=sxv80X2jQYQ",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/15-3.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "15.4 Momentum of a System of Point Particles",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Cslq_ZYdYwE",
+      "mediaUrl": "https://www.youtube.com/watch?v=Cslq_ZYdYwE",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/15-4.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "15.5 Force on a System of Particles",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "1GvCIlHihEA",
+      "mediaUrl": "https://www.youtube.com/watch?v=1GvCIlHihEA",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/15.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "15.1 Momentum and Impulse",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "w7z_z-lucyU",
+      "mediaUrl": "https://www.youtube.com/watch?v=w7z_z-lucyU",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/16-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "16.2 Momentum Diagrams",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "Vg8t8_IOHDg",
+      "mediaUrl": "https://www.youtube.com/watch?v=Vg8t8_IOHDg",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/16.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "16.1 Conservation of Momentum",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    },
+    {
+      "youtubeId": "-b0dFcebPcs",
+      "mediaUrl": "https://www.youtube.com/watch?v=-b0dFcebPcs",
+      "metadataUrl": "https://raw.githubusercontent.com/mitocwcontent/8.01sc-fall-2016/399296c3da3b1ea0c18bf3e41cdd1d36dd0df895/content/resources/17-1.md",
+      "sourceCommit": "399296c3da3b1ea0c18bf3e41cdd1d36dd0df895",
+      "title": "17.2 Worked Example - Center of Mass of 3 Objects",
+      "playback": "not-verified",
+      "httpStatus": 200,
+      "metadataVerified": true
+    }
+  ]
+}

@@ -28,3 +28,8 @@ Você é o agente de desenvolvimento do Órbita Estudos, aplicativo PESSOAL de E
 - Documentação atual: README.md, AUDIT-1.4.md, INTEGRATIONS.md, TEST-REPORT.md e NEXT-STEPS.md. O pacote público não inclui dados acadêmicos pessoais.
 - Rode `TZ=America/Sao_Paulo npm test`, `npm run test:browser` e `npm run build`. O teste de navegador inicia seu próprio servidor. Fixtures `pwa-1.3` são somente código público antigo para testar atualização de SW.
 - Não declarar Safari físico, OAuth ou deploy sem evidência. Trate relatos antigos nas seções anteriores como históricos, não como estado atual.
+
+## Atualização 1.5.0
+- Leia CONTENT-REPORT.md e BACKEND-SETUP.md. `npm test`, `npm run test:usage`, `npm run test:browser`, `npm run videos:verify`, `npm run build`.
+- Metadados verificados em fonte oficial NÃO equivalem a reprodução validada. Sessões simuladas NÃO são aprendizagem real. Mocks NÃO são OAuth ativo.
+- Nunca colocar cards privados no catálogo público ou cache de assets. ZIP estático não instala funções Netlify; usar deploy Git/projeto completo para backend.

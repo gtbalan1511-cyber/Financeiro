@@ -1,0 +1,2945 @@
+{
+  "notice": "Histórico de aluno SIMULADO por código. Não são dados ou aprendizagem real de uma pessoa.",
+  "scenarios": {
+    "oneSession": {
+      "synthetic": true,
+      "days": 1,
+      "sessionsPerDay": 1,
+      "totalShown": 8,
+      "unique": 8,
+      "repeated": 0,
+      "formats": [
+        "challenge",
+        "lesson",
+        "video"
+      ],
+      "subjects": [
+        "MEF120",
+        "MEE120",
+        "CSJ030",
+        "MEP230",
+        "MRD230",
+        "MED120"
+      ],
+      "challengesResponded": 4,
+      "justifiedReviews": 0,
+      "runs": [
+        {
+          "day": 1,
+          "session": 1,
+          "count": 8,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 8,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEE120",
+            "CSJ030",
+            "MEP230",
+            "MRD230",
+            "MED120"
+          ],
+          "reviews": 0,
+          "answered": 4
+        }
+      ]
+    },
+    "threeSessions": {
+      "synthetic": true,
+      "days": 1,
+      "sessionsPerDay": 3,
+      "totalShown": 36,
+      "unique": 36,
+      "repeated": 0,
+      "formats": [
+        "challenge",
+        "lesson",
+        "video",
+        "simulation"
+      ],
+      "subjects": [
+        "MEF120",
+        "MEE120",
+        "CSJ030",
+        "MEP230",
+        "MRD230",
+        "MED120",
+        "MEP140",
+        "MEI150"
+      ],
+      "challengesResponded": 13,
+      "justifiedReviews": 0,
+      "runs": [
+        {
+          "day": 1,
+          "session": 1,
+          "count": 8,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 8,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEE120",
+            "CSJ030",
+            "MEP230",
+            "MRD230",
+            "MED120"
+          ],
+          "reviews": 0,
+          "answered": 4
+        },
+        {
+          "day": 1,
+          "session": 2,
+          "count": 14,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 14,
+          "formats": [
+            "lesson",
+            "simulation",
+            "video",
+            "challenge"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MEE120",
+            "MRD230",
+            "MEP230",
+            "MEP140",
+            "MED120",
+            "MEF120"
+          ],
+          "reviews": 0,
+          "answered": 5
+        },
+        {
+          "day": 1,
+          "session": 3,
+          "count": 14,
+          "estimatedSeconds": 1965,
+          "insufficient": false,
+          "unique": 14,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEP140",
+            "MEF120",
+            "MEP230",
+            "MEI150",
+            "CSJ030"
+          ],
+          "reviews": 0,
+          "answered": 4
+        }
+      ]
+    },
+    "sevenDays": {
+      "synthetic": true,
+      "days": 7,
+      "sessionsPerDay": 3,
+      "totalShown": 306,
+      "unique": 179,
+      "repeated": 127,
+      "formats": [
+        "challenge",
+        "lesson",
+        "video",
+        "simulation"
+      ],
+      "subjects": [
+        "MEF120",
+        "MEE120",
+        "CSJ030",
+        "MEP230",
+        "MRD230",
+        "MED120",
+        "MEP140",
+        "MEI150",
+        "ELE010"
+      ],
+      "challengesResponded": 132,
+      "justifiedReviews": 163,
+      "runs": [
+        {
+          "day": 1,
+          "session": 1,
+          "count": 8,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 8,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEE120",
+            "CSJ030",
+            "MEP230",
+            "MRD230",
+            "MED120"
+          ],
+          "reviews": 0,
+          "answered": 4
+        },
+        {
+          "day": 1,
+          "session": 2,
+          "count": 14,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 14,
+          "formats": [
+            "lesson",
+            "simulation",
+            "video",
+            "challenge"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MEE120",
+            "MRD230",
+            "MEP230",
+            "MEP140",
+            "MED120",
+            "MEF120"
+          ],
+          "reviews": 0,
+          "answered": 5
+        },
+        {
+          "day": 1,
+          "session": 3,
+          "count": 14,
+          "estimatedSeconds": 1965,
+          "insufficient": false,
+          "unique": 14,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEP140",
+            "MEF120",
+            "MEP230",
+            "MEI150",
+            "CSJ030"
+          ],
+          "reviews": 0,
+          "answered": 4
+        },
+        {
+          "day": 2,
+          "session": 1,
+          "count": 12,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MEE120",
+            "MED120",
+            "CSJ030",
+            "MRD230",
+            "MEI150",
+            "MEP140",
+            "MEP230"
+          ],
+          "reviews": 5,
+          "answered": 5
+        },
+        {
+          "day": 2,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MEE120",
+            "MED120",
+            "MRD230",
+            "MEI150",
+            "CSJ030",
+            "MEP230",
+            "MEP140",
+            "ELE010"
+          ],
+          "reviews": 3,
+          "answered": 9
+        },
+        {
+          "day": 2,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MEE120",
+            "MEF120",
+            "MEI150",
+            "MED120",
+            "MEP230",
+            "CSJ030"
+          ],
+          "reviews": 1,
+          "answered": 6
+        },
+        {
+          "day": 3,
+          "session": 1,
+          "count": 12,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "MEE120",
+            "MEI150",
+            "MEP230",
+            "CSJ030",
+            "MEP140",
+            "MRD230"
+          ],
+          "reviews": 5,
+          "answered": 5
+        },
+        {
+          "day": 3,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEF120",
+            "MEI150",
+            "MEP230",
+            "ELE010",
+            "MRD230",
+            "CSJ030"
+          ],
+          "reviews": 4,
+          "answered": 7
+        },
+        {
+          "day": 3,
+          "session": 3,
+          "count": 16,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MED120",
+            "MRD230",
+            "CSJ030",
+            "ELE010",
+            "MEP140",
+            "MEF120",
+            "MEP230",
+            "MEE120",
+            "MEI150"
+          ],
+          "reviews": 0,
+          "answered": 6
+        },
+        {
+          "day": 4,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "ELE010",
+            "MEP230",
+            "MEI150",
+            "MEE120",
+            "MEP140"
+          ],
+          "reviews": 17,
+          "answered": 5
+        },
+        {
+          "day": 4,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "lesson",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEP140",
+            "ELE010",
+            "MEF120",
+            "MEP230",
+            "MEI150"
+          ],
+          "reviews": 10,
+          "answered": 7
+        },
+        {
+          "day": 4,
+          "session": 3,
+          "count": 15,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 15,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "MEI150",
+            "MEF120",
+            "ELE010",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 5,
+          "answered": 7
+        },
+        {
+          "day": 5,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1845,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEP230",
+            "MEP140",
+            "MEE120",
+            "MED120",
+            "CSJ030",
+            "ELE010"
+          ],
+          "reviews": 18,
+          "answered": 4
+        },
+        {
+          "day": 5,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEE120",
+            "MED120",
+            "MEP230",
+            "ELE010",
+            "MEP140",
+            "MEI150",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 18,
+          "answered": 8
+        },
+        {
+          "day": 5,
+          "session": 3,
+          "count": 16,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEF120",
+            "MEI150",
+            "MEE120",
+            "CSJ030",
+            "MEP230",
+            "MRD230",
+            "MEP140",
+            "MED120"
+          ],
+          "reviews": 13,
+          "answered": 9
+        },
+        {
+          "day": 6,
+          "session": 1,
+          "count": 19,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEE120",
+            "MRD230",
+            "CSJ030",
+            "MEP140",
+            "MED120",
+            "MEP230",
+            "MEF120"
+          ],
+          "reviews": 19,
+          "answered": 6
+        },
+        {
+          "day": 6,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEP140",
+            "MEF120",
+            "MRD230",
+            "MEE120",
+            "MEI150"
+          ],
+          "reviews": 13,
+          "answered": 10
+        },
+        {
+          "day": 6,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEP140",
+            "MED120",
+            "MRD230",
+            "ELE010",
+            "MEE120",
+            "MEP230"
+          ],
+          "reviews": 5,
+          "answered": 5
+        },
+        {
+          "day": 7,
+          "session": 1,
+          "count": 19,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "CSJ030",
+            "MEF120",
+            "MED120",
+            "MEP230",
+            "MEE120",
+            "MRD230",
+            "MEP140"
+          ],
+          "reviews": 15,
+          "answered": 5
+        },
+        {
+          "day": 7,
+          "session": 2,
+          "count": 12,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEP230",
+            "ELE010",
+            "MEE120",
+            "CSJ030",
+            "MED120",
+            "MRD230",
+            "MEP140"
+          ],
+          "reviews": 10,
+          "answered": 9
+        },
+        {
+          "day": 7,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "video",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MEF120",
+            "MEP140",
+            "MED120",
+            "CSJ030",
+            "MEI150"
+          ],
+          "reviews": 2,
+          "answered": 6
+        }
+      ]
+    },
+    "thirtyDays": {
+      "synthetic": true,
+      "days": 30,
+      "sessionsPerDay": 3,
+      "totalShown": 1346,
+      "unique": 375,
+      "repeated": 971,
+      "formats": [
+        "challenge",
+        "lesson",
+        "video",
+        "simulation"
+      ],
+      "subjects": [
+        "MEF120",
+        "MEE120",
+        "CSJ030",
+        "MEP230",
+        "MRD230",
+        "MED120",
+        "MEP140",
+        "MEI150",
+        "ELE010"
+      ],
+      "challengesResponded": 587,
+      "justifiedReviews": 1023,
+      "runs": [
+        {
+          "day": 1,
+          "session": 1,
+          "count": 8,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 8,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEE120",
+            "CSJ030",
+            "MEP230",
+            "MRD230",
+            "MED120"
+          ],
+          "reviews": 0,
+          "answered": 4
+        },
+        {
+          "day": 1,
+          "session": 2,
+          "count": 14,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 14,
+          "formats": [
+            "lesson",
+            "simulation",
+            "video",
+            "challenge"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MEE120",
+            "MRD230",
+            "MEP230",
+            "MEP140",
+            "MED120",
+            "MEF120"
+          ],
+          "reviews": 0,
+          "answered": 5
+        },
+        {
+          "day": 1,
+          "session": 3,
+          "count": 14,
+          "estimatedSeconds": 1965,
+          "insufficient": false,
+          "unique": 14,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEP140",
+            "MEF120",
+            "MEP230",
+            "MEI150",
+            "CSJ030"
+          ],
+          "reviews": 0,
+          "answered": 4
+        },
+        {
+          "day": 2,
+          "session": 1,
+          "count": 12,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MEE120",
+            "MED120",
+            "CSJ030",
+            "MRD230",
+            "MEI150",
+            "MEP140",
+            "MEP230"
+          ],
+          "reviews": 5,
+          "answered": 5
+        },
+        {
+          "day": 2,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MEE120",
+            "MED120",
+            "MRD230",
+            "MEI150",
+            "CSJ030",
+            "MEP230",
+            "MEP140",
+            "ELE010"
+          ],
+          "reviews": 3,
+          "answered": 9
+        },
+        {
+          "day": 2,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MEE120",
+            "MEF120",
+            "MEI150",
+            "MED120",
+            "MEP230",
+            "CSJ030"
+          ],
+          "reviews": 1,
+          "answered": 6
+        },
+        {
+          "day": 3,
+          "session": 1,
+          "count": 12,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "MEE120",
+            "MEI150",
+            "MEP230",
+            "CSJ030",
+            "MEP140",
+            "MRD230"
+          ],
+          "reviews": 5,
+          "answered": 5
+        },
+        {
+          "day": 3,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEF120",
+            "MEI150",
+            "MEP230",
+            "ELE010",
+            "MRD230",
+            "CSJ030"
+          ],
+          "reviews": 4,
+          "answered": 7
+        },
+        {
+          "day": 3,
+          "session": 3,
+          "count": 16,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MED120",
+            "MRD230",
+            "CSJ030",
+            "ELE010",
+            "MEP140",
+            "MEF120",
+            "MEP230",
+            "MEE120",
+            "MEI150"
+          ],
+          "reviews": 0,
+          "answered": 6
+        },
+        {
+          "day": 4,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "ELE010",
+            "MEP230",
+            "MEI150",
+            "MEE120",
+            "MEP140"
+          ],
+          "reviews": 17,
+          "answered": 5
+        },
+        {
+          "day": 4,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "lesson",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEP140",
+            "ELE010",
+            "MEF120",
+            "MEP230",
+            "MEI150"
+          ],
+          "reviews": 10,
+          "answered": 7
+        },
+        {
+          "day": 4,
+          "session": 3,
+          "count": 15,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 15,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "MEI150",
+            "MEF120",
+            "ELE010",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 5,
+          "answered": 7
+        },
+        {
+          "day": 5,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1845,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEP230",
+            "MEP140",
+            "MEE120",
+            "MED120",
+            "CSJ030",
+            "ELE010"
+          ],
+          "reviews": 18,
+          "answered": 4
+        },
+        {
+          "day": 5,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "MEE120",
+            "MED120",
+            "MEP230",
+            "ELE010",
+            "MEP140",
+            "MEI150",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 18,
+          "answered": 8
+        },
+        {
+          "day": 5,
+          "session": 3,
+          "count": 16,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEF120",
+            "MEI150",
+            "MEE120",
+            "CSJ030",
+            "MEP230",
+            "MRD230",
+            "MEP140",
+            "MED120"
+          ],
+          "reviews": 13,
+          "answered": 9
+        },
+        {
+          "day": 6,
+          "session": 1,
+          "count": 19,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEE120",
+            "MRD230",
+            "CSJ030",
+            "MEP140",
+            "MED120",
+            "MEP230",
+            "MEF120"
+          ],
+          "reviews": 19,
+          "answered": 6
+        },
+        {
+          "day": 6,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEP140",
+            "MEF120",
+            "MRD230",
+            "MEE120",
+            "MEI150"
+          ],
+          "reviews": 13,
+          "answered": 10
+        },
+        {
+          "day": 6,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEP140",
+            "MED120",
+            "MRD230",
+            "ELE010",
+            "MEE120",
+            "MEP230"
+          ],
+          "reviews": 5,
+          "answered": 5
+        },
+        {
+          "day": 7,
+          "session": 1,
+          "count": 19,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "CSJ030",
+            "MEF120",
+            "MED120",
+            "MEP230",
+            "MEE120",
+            "MRD230",
+            "MEP140"
+          ],
+          "reviews": 15,
+          "answered": 5
+        },
+        {
+          "day": 7,
+          "session": 2,
+          "count": 12,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEP230",
+            "ELE010",
+            "MEE120",
+            "CSJ030",
+            "MED120",
+            "MRD230",
+            "MEP140"
+          ],
+          "reviews": 10,
+          "answered": 9
+        },
+        {
+          "day": 7,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "video",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MEF120",
+            "MEP140",
+            "MED120",
+            "CSJ030",
+            "MEI150"
+          ],
+          "reviews": 2,
+          "answered": 6
+        },
+        {
+          "day": 8,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "ELE010",
+            "MEP140",
+            "MEF120",
+            "MEI150",
+            "MRD230"
+          ],
+          "reviews": 14,
+          "answered": 5
+        },
+        {
+          "day": 8,
+          "session": 2,
+          "count": 16,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MED120",
+            "ELE010",
+            "MEI150",
+            "MEP230",
+            "MEP140",
+            "MEF120",
+            "MRD230",
+            "MEE120"
+          ],
+          "reviews": 12,
+          "answered": 11
+        },
+        {
+          "day": 8,
+          "session": 3,
+          "count": 11,
+          "estimatedSeconds": 1845,
+          "insufficient": false,
+          "unique": 11,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "MEE120",
+            "MRD230",
+            "MEI150",
+            "MEP140"
+          ],
+          "reviews": 3,
+          "answered": 4
+        },
+        {
+          "day": 9,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MEE120",
+            "MED120",
+            "MEP230",
+            "MEF120",
+            "MRD230",
+            "MEP140",
+            "CSJ030",
+            "ELE010",
+            "MEI150"
+          ],
+          "reviews": 11,
+          "answered": 6
+        },
+        {
+          "day": 9,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1845,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MEE120",
+            "MEP230",
+            "MED120",
+            "MEF120",
+            "MEP140",
+            "ELE010",
+            "CSJ030",
+            "MEI150",
+            "MRD230"
+          ],
+          "reviews": 8,
+          "answered": 8
+        },
+        {
+          "day": 9,
+          "session": 3,
+          "count": 17,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "MEE120",
+            "MEP140",
+            "MEI150",
+            "MEF120",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 4,
+          "answered": 9
+        },
+        {
+          "day": 10,
+          "session": 1,
+          "count": 13,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "MEF120",
+            "ELE010",
+            "CSJ030",
+            "MEE120"
+          ],
+          "reviews": 11,
+          "answered": 5
+        },
+        {
+          "day": 10,
+          "session": 2,
+          "count": 12,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "MEP230",
+            "MEE120",
+            "CSJ030",
+            "MEP140",
+            "MRD230",
+            "ELE010"
+          ],
+          "reviews": 7,
+          "answered": 6
+        },
+        {
+          "day": 10,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEP140",
+            "MEI150",
+            "MEP230",
+            "MEE120",
+            "MRD230"
+          ],
+          "reviews": 2,
+          "answered": 6
+        },
+        {
+          "day": 11,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MRD230",
+            "MED120",
+            "CSJ030",
+            "ELE010",
+            "MEF120",
+            "MEE120",
+            "MEP230",
+            "MEP140",
+            "MEI150"
+          ],
+          "reviews": 13,
+          "answered": 5
+        },
+        {
+          "day": 11,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "MEF120",
+            "ELE010",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEE120",
+            "MRD230",
+            "MEP140",
+            "MEI150"
+          ],
+          "reviews": 15,
+          "answered": 9
+        },
+        {
+          "day": 11,
+          "session": 3,
+          "count": 11,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 11,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "ELE010",
+            "MED120",
+            "MEE120",
+            "MRD230",
+            "MEP140",
+            "MEP230",
+            "MEI150",
+            "MEF120"
+          ],
+          "reviews": 7,
+          "answered": 6
+        },
+        {
+          "day": 12,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MEP140",
+            "MEI150",
+            "MEF120",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEE120",
+            "MRD230"
+          ],
+          "reviews": 18,
+          "answered": 2
+        },
+        {
+          "day": 12,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MEE120",
+            "MEP140",
+            "MRD230",
+            "MEP230",
+            "MED120",
+            "MEI150"
+          ],
+          "reviews": 17,
+          "answered": 9
+        },
+        {
+          "day": 12,
+          "session": 3,
+          "count": 16,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MEE120",
+            "MRD230",
+            "MEP140",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEF120",
+            "ELE010",
+            "MEI150"
+          ],
+          "reviews": 10,
+          "answered": 8
+        },
+        {
+          "day": 13,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MRD230",
+            "MEP230",
+            "MEP140",
+            "MEE120",
+            "CSJ030",
+            "ELE010",
+            "MED120",
+            "MEI150",
+            "MEF120"
+          ],
+          "reviews": 16,
+          "answered": 8
+        },
+        {
+          "day": 13,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MEP230",
+            "MEP140",
+            "MEE120",
+            "ELE010",
+            "MED120",
+            "MEI150",
+            "MRD230",
+            "MEF120"
+          ],
+          "reviews": 14,
+          "answered": 9
+        },
+        {
+          "day": 13,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "simulation",
+            "challenge",
+            "video",
+            "lesson"
+          ],
+          "subjects": [
+            "MEP230",
+            "MEE120",
+            "MRD230",
+            "MEP140",
+            "ELE010",
+            "MED120",
+            "CSJ030"
+          ],
+          "reviews": 7,
+          "answered": 6
+        },
+        {
+          "day": 14,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "MEE120",
+            "MEP140",
+            "ELE010",
+            "CSJ030",
+            "MEI150",
+            "MRD230"
+          ],
+          "reviews": 14,
+          "answered": 6
+        },
+        {
+          "day": 14,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson"
+          ],
+          "subjects": [
+            "MEE120",
+            "MED120",
+            "MEP140",
+            "MEP230",
+            "CSJ030",
+            "MEF120",
+            "MEI150",
+            "ELE010"
+          ],
+          "reviews": 17,
+          "answered": 10
+        },
+        {
+          "day": 14,
+          "session": 3,
+          "count": 11,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 11,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEI150",
+            "MEE120",
+            "MEF120",
+            "ELE010",
+            "MEP230",
+            "MEP140"
+          ],
+          "reviews": 9,
+          "answered": 6
+        },
+        {
+          "day": 15,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MED120",
+            "MEI150",
+            "MEE120",
+            "MEF120",
+            "MEP140",
+            "MEP230",
+            "ELE010",
+            "MRD230"
+          ],
+          "reviews": 15,
+          "answered": 5
+        },
+        {
+          "day": 15,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "lesson",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEE120",
+            "MEF120",
+            "MEI150",
+            "MEP140",
+            "MEP230",
+            "ELE010",
+            "MRD230"
+          ],
+          "reviews": 10,
+          "answered": 7
+        },
+        {
+          "day": 15,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEI150",
+            "MEP230",
+            "CSJ030",
+            "MRD230",
+            "ELE010"
+          ],
+          "reviews": 4,
+          "answered": 6
+        },
+        {
+          "day": 16,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "ELE010",
+            "CSJ030",
+            "MEP230",
+            "MEP140",
+            "MEE120"
+          ],
+          "reviews": 14,
+          "answered": 8
+        },
+        {
+          "day": 16,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1920,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video",
+            "simulation"
+          ],
+          "subjects": [
+            "MEP230",
+            "MED120",
+            "MEP140",
+            "ELE010",
+            "MEF120",
+            "CSJ030"
+          ],
+          "reviews": 8,
+          "answered": 7
+        },
+        {
+          "day": 16,
+          "session": 3,
+          "count": 7,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 7,
+          "formats": [
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEP140",
+            "MEF120"
+          ],
+          "reviews": 3,
+          "answered": 4
+        },
+        {
+          "day": 17,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEP140",
+            "MEE120",
+            "CSJ030",
+            "ELE010",
+            "MEP230",
+            "MED120",
+            "MEI150",
+            "MRD230",
+            "MEF120"
+          ],
+          "reviews": 14,
+          "answered": 7
+        },
+        {
+          "day": 17,
+          "session": 2,
+          "count": 19,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "CSJ030",
+            "MEE120",
+            "MEP140",
+            "MEI150",
+            "ELE010",
+            "MED120",
+            "MEF120",
+            "MEP230",
+            "MRD230"
+          ],
+          "reviews": 14,
+          "answered": 10
+        },
+        {
+          "day": 17,
+          "session": 3,
+          "count": 7,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 7,
+          "formats": [
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MEE120",
+            "MEP230",
+            "ELE010",
+            "MEF120"
+          ],
+          "reviews": 4,
+          "answered": 4
+        },
+        {
+          "day": 18,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEP230",
+            "MEF120",
+            "CSJ030",
+            "MEI150",
+            "ELE010",
+            "MEP140",
+            "MRD230"
+          ],
+          "reviews": 15,
+          "answered": 5
+        },
+        {
+          "day": 18,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEI150",
+            "MEP230",
+            "MEF120",
+            "CSJ030",
+            "MRD230",
+            "MED120",
+            "MEE120",
+            "MEP140"
+          ],
+          "reviews": 18,
+          "answered": 10
+        },
+        {
+          "day": 18,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEI150",
+            "MEF120",
+            "MEP140",
+            "MRD230",
+            "MED120",
+            "MEP230",
+            "MEE120"
+          ],
+          "reviews": 10,
+          "answered": 6
+        },
+        {
+          "day": 19,
+          "session": 1,
+          "count": 16,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MEF120",
+            "MEI150",
+            "MEP140",
+            "MED120",
+            "MRD230",
+            "CSJ030"
+          ],
+          "reviews": 16,
+          "answered": 4
+        },
+        {
+          "day": 19,
+          "session": 2,
+          "count": 16,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson"
+          ],
+          "subjects": [
+            "MEP230",
+            "ELE010",
+            "MEF120",
+            "MEI150",
+            "MEP140",
+            "MED120",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 16,
+          "answered": 9
+        },
+        {
+          "day": 19,
+          "session": 3,
+          "count": 11,
+          "estimatedSeconds": 1890,
+          "insufficient": false,
+          "unique": 11,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEF120",
+            "MED120",
+            "MEP230",
+            "MEE120"
+          ],
+          "reviews": 7,
+          "answered": 5
+        },
+        {
+          "day": 20,
+          "session": 1,
+          "count": 16,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MEF120",
+            "MEE120",
+            "MED120",
+            "MEI150",
+            "MRD230"
+          ],
+          "reviews": 15,
+          "answered": 4
+        },
+        {
+          "day": 20,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "MEP230",
+            "ELE010",
+            "MED120",
+            "MEE120",
+            "MEP140",
+            "MEF120",
+            "MEI150"
+          ],
+          "reviews": 17,
+          "answered": 9
+        },
+        {
+          "day": 20,
+          "session": 3,
+          "count": 11,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 11,
+          "formats": [
+            "challenge",
+            "simulation",
+            "video",
+            "lesson"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEE120",
+            "MED120",
+            "MEP140",
+            "MEP230",
+            "MEF120",
+            "CSJ030"
+          ],
+          "reviews": 8,
+          "answered": 6
+        },
+        {
+          "day": 21,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEP230",
+            "MEF120",
+            "ELE010",
+            "MEE120",
+            "MED120",
+            "MEI150",
+            "CSJ030",
+            "MRD230"
+          ],
+          "reviews": 16,
+          "answered": 6
+        },
+        {
+          "day": 21,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MEF120",
+            "ELE010",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEE120",
+            "MEI150",
+            "MRD230",
+            "MEP140"
+          ],
+          "reviews": 18,
+          "answered": 8
+        },
+        {
+          "day": 21,
+          "session": 3,
+          "count": 6,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 6,
+          "formats": [
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "ELE010",
+            "MEP230"
+          ],
+          "reviews": 4,
+          "answered": 2
+        },
+        {
+          "day": 22,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "ELE010",
+            "MEP230",
+            "CSJ030",
+            "MEE120"
+          ],
+          "reviews": 17,
+          "answered": 6
+        },
+        {
+          "day": 22,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "MED120",
+            "MEP230",
+            "CSJ030",
+            "MRD230",
+            "MEI150",
+            "MEF120",
+            "MEP140"
+          ],
+          "reviews": 18,
+          "answered": 8
+        },
+        {
+          "day": 22,
+          "session": 3,
+          "count": 10,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 10,
+          "formats": [
+            "simulation",
+            "challenge",
+            "video",
+            "lesson"
+          ],
+          "subjects": [
+            "ELE010",
+            "MED120",
+            "MEP230",
+            "MEI150",
+            "MEP140"
+          ],
+          "reviews": 9,
+          "answered": 5
+        },
+        {
+          "day": 23,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "CSJ030",
+            "MEF120",
+            "MEP230",
+            "MEP140",
+            "MEI150",
+            "MRD230"
+          ],
+          "reviews": 18,
+          "answered": 6
+        },
+        {
+          "day": 23,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1830,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "ELE010",
+            "CSJ030",
+            "MEI150",
+            "MEP140"
+          ],
+          "reviews": 17,
+          "answered": 10
+        },
+        {
+          "day": 23,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP140",
+            "MEP230",
+            "MEE120",
+            "ELE010",
+            "MEF120",
+            "MEI150"
+          ],
+          "reviews": 9,
+          "answered": 6
+        },
+        {
+          "day": 24,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "simulation",
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEP140",
+            "MRD230",
+            "CSJ030",
+            "MEF120",
+            "MEP230"
+          ],
+          "reviews": 15,
+          "answered": 6
+        },
+        {
+          "day": 24,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "lesson",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEP140",
+            "MRD230",
+            "MEF120",
+            "MEP230"
+          ],
+          "reviews": 12,
+          "answered": 7
+        },
+        {
+          "day": 24,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1905,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MED120",
+            "MRD230",
+            "MEP230",
+            "ELE010",
+            "MEF120",
+            "MEE120"
+          ],
+          "reviews": 8,
+          "answered": 6
+        },
+        {
+          "day": 25,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP140",
+            "MEP230",
+            "MEF120",
+            "ELE010",
+            "MRD230",
+            "CSJ030",
+            "MEE120"
+          ],
+          "reviews": 13,
+          "answered": 7
+        },
+        {
+          "day": 25,
+          "session": 2,
+          "count": 13,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 13,
+          "formats": [
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEF120",
+            "MEP230",
+            "MRD230",
+            "MEP140",
+            "CSJ030",
+            "MEE120"
+          ],
+          "reviews": 12,
+          "answered": 7
+        },
+        {
+          "day": 25,
+          "session": 3,
+          "count": 7,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 7,
+          "formats": [
+            "challenge",
+            "simulation",
+            "video"
+          ],
+          "subjects": [
+            "MEF120",
+            "MRD230",
+            "MED120",
+            "MEP230",
+            "CSJ030"
+          ],
+          "reviews": 5,
+          "answered": 4
+        },
+        {
+          "day": 26,
+          "session": 1,
+          "count": 16,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MRD230",
+            "MEE120",
+            "MED120",
+            "MEP230",
+            "MEF120",
+            "CSJ030",
+            "MEI150"
+          ],
+          "reviews": 15,
+          "answered": 3
+        },
+        {
+          "day": 26,
+          "session": 2,
+          "count": 19,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "lesson",
+            "challenge"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEE120",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MEF120",
+            "MEI150",
+            "MRD230",
+            "MEP140"
+          ],
+          "reviews": 18,
+          "answered": 10
+        },
+        {
+          "day": 26,
+          "session": 3,
+          "count": 15,
+          "estimatedSeconds": 1860,
+          "insufficient": false,
+          "unique": 15,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "CSJ030",
+            "MEF120",
+            "MEP140",
+            "MEE120",
+            "MRD230"
+          ],
+          "reviews": 14,
+          "answered": 7
+        },
+        {
+          "day": 27,
+          "session": 1,
+          "count": 16,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEE120",
+            "MEP230",
+            "MEP140",
+            "MEF120",
+            "CSJ030"
+          ],
+          "reviews": 16,
+          "answered": 4
+        },
+        {
+          "day": 27,
+          "session": 2,
+          "count": 19,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 19,
+          "formats": [
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MEE120",
+            "MED120",
+            "MEP140",
+            "MEF120",
+            "CSJ030",
+            "MEI150"
+          ],
+          "reviews": 18,
+          "answered": 10
+        },
+        {
+          "day": 27,
+          "session": 3,
+          "count": 10,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 10,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson",
+            "video"
+          ],
+          "subjects": [
+            "MEP230",
+            "MED120",
+            "MEF120",
+            "MEP140",
+            "MEI150",
+            "CSJ030"
+          ],
+          "reviews": 9,
+          "answered": 5
+        },
+        {
+          "day": 28,
+          "session": 1,
+          "count": 15,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 15,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEP230",
+            "MEF120",
+            "MEE120"
+          ],
+          "reviews": 15,
+          "answered": 1
+        },
+        {
+          "day": 28,
+          "session": 2,
+          "count": 17,
+          "estimatedSeconds": 1845,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "simulation",
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEP230",
+            "MEF120",
+            "MEE120",
+            "MEP140"
+          ],
+          "reviews": 17,
+          "answered": 8
+        },
+        {
+          "day": 28,
+          "session": 3,
+          "count": 17,
+          "estimatedSeconds": 1845,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MED120",
+            "MEP230",
+            "ELE010",
+            "MEF120",
+            "CSJ030",
+            "MEP140",
+            "MEE120",
+            "MRD230"
+          ],
+          "reviews": 17,
+          "answered": 8
+        },
+        {
+          "day": 29,
+          "session": 1,
+          "count": 18,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "lesson",
+            "challenge",
+            "simulation"
+          ],
+          "subjects": [
+            "MEF120",
+            "MED120",
+            "ELE010",
+            "MEP230",
+            "MRD230",
+            "CSJ030",
+            "MEP140"
+          ],
+          "reviews": 16,
+          "answered": 8
+        },
+        {
+          "day": 29,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1965,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson"
+          ],
+          "subjects": [
+            "MEF120",
+            "ELE010",
+            "MEI150",
+            "MEP230",
+            "MED120",
+            "CSJ030",
+            "MRD230",
+            "MEE120"
+          ],
+          "reviews": 17,
+          "answered": 9
+        },
+        {
+          "day": 29,
+          "session": 3,
+          "count": 12,
+          "estimatedSeconds": 1965,
+          "insufficient": false,
+          "unique": 12,
+          "formats": [
+            "lesson",
+            "simulation",
+            "challenge",
+            "video"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MEI150",
+            "CSJ030",
+            "MRD230",
+            "MED120",
+            "MEE120"
+          ],
+          "reviews": 11,
+          "answered": 5
+        },
+        {
+          "day": 30,
+          "session": 1,
+          "count": 17,
+          "estimatedSeconds": 1815,
+          "insufficient": false,
+          "unique": 17,
+          "formats": [
+            "challenge",
+            "lesson",
+            "simulation"
+          ],
+          "subjects": [
+            "ELE010",
+            "MEP230",
+            "MED120",
+            "MEF120",
+            "MEI150",
+            "MRD230",
+            "CSJ030",
+            "MEP140"
+          ],
+          "reviews": 16,
+          "answered": 5
+        },
+        {
+          "day": 30,
+          "session": 2,
+          "count": 18,
+          "estimatedSeconds": 1800,
+          "insufficient": false,
+          "unique": 18,
+          "formats": [
+            "challenge",
+            "lesson"
+          ],
+          "subjects": [
+            "MEI150",
+            "MED120",
+            "MEF120",
+            "ELE010",
+            "MEP230",
+            "MEE120",
+            "MEP140",
+            "MRD230",
+            "CSJ030"
+          ],
+          "reviews": 18,
+          "answered": 10
+        },
+        {
+          "day": 30,
+          "session": 3,
+          "count": 16,
+          "estimatedSeconds": 1875,
+          "insufficient": false,
+          "unique": 16,
+          "formats": [
+            "challenge",
+            "simulation",
+            "lesson"
+          ],
+          "subjects": [
+            "MED120",
+            "ELE010",
+            "MEP140",
+            "MEP230",
+            "MEI150",
+            "MEE120",
+            "MRD230",
+            "CSJ030",
+            "MEF120"
+          ],
+          "reviews": 15,
+          "answered": 8
+        }
+      ]
+    }
+  }
+}

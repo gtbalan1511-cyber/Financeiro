@@ -1,64 +1,65 @@
-# Órbita Estudos 1.4.0
+# Órbita Estudos 1.5.0
 
-PWA pessoal para Engenharia Mecânica, desenvolvido incrementalmente sobre a versão 1.3. Aplicação estática em HTML/CSS/JavaScript; não depende de API paga, backend ou conta conectada para estudar. Questões e diagramas são autorais; não são provas oficiais nem cobrem integralmente o currículo da FEI.
+Continuação incremental da 1.4. PWA pessoal para Engenharia Mecânica: catálogo expansível, feed adaptativo, simulados, revisão espaçada e backend de conexões somente leitura. Sem IA paga ou serviço contratado nesta entrega.
 
-## Recursos
+## O que está entregue
 
-- Exam Prep P2/P3 por disciplina, conteúdo e quantidade (1/3/5/10, limitado ao banco disponível); sequência priorizada por erros ativos, bloco de estudo, prova próxima e revisão vencida.
-- Simulado retomável após reload, relatório e histórico por matéria; respostas independentes, confiança, ajuda e consulta distinguidas; classificação de dificuldade e feedback pedagógico.
-- Revisão espaçada de questões e flashcards: 3/7/14/30/60 dias para acertos independentes confiantes; 1 dia para erro/ajuda/baixa confiança. Repetir cedo não infla retenção.
-- Exercício diário com escolha entre blocos, próximos estudos em horário local e dificuldades importadas; não usa aulas genéricas ou inventa correspondência de assunto.
-- Importação local Calendar JSON/ICS e Notion JSON/CSV, além de links HTTPS de Drive; histórico local de revisões. Sem sincronização OAuth ao vivo.
-- Feed finito, swipe vertical, diagramas SVG originais, simulações de vibração/condução, desafios com confiança, sessões de 5/10/15 minutos e encerramento explícito. Visualizações não contam como acertos.
-- Backup JSON, restauração transacional, proteção contra sobrescrita entre abas, recuperação de dados corrompidos e avisos de falha de persistência.
-- PWA offline com cache estático por versão e atualização controlada em Configurações. Campos e alvos de toque adaptados ao iPhone e redução de movimento respeitada.
+**402 atividades**: 153 explicações originais, 153 desafios distintos, 36 simulações com controles/modelos/curvas e 60 vídeos referenciados. São **153 conceitos-base autorais**, não 402 conceitos diferentes. Todas as nove disciplinas têm 17 conceitos e 17 desafios. Conteúdo introdutório com revisão pedagógica humana pendente, não provas oficiais FEI.
 
-## Desenvolvimento e validação
+Os **60 IDs e títulos de vídeos foram conferidos por HTTP nas fontes oficiais MIT OpenCourseWare em commits fixos**. Reprodução e duração exata no YouTube não foram validadas: o acesso direto retornou bloqueio de rede. Vídeos não são baixados, copiados ou carregados automaticamente; o player oficial exige ação do usuário. Parte das aulas é longa e está disponível na Biblioteca de vídeos, fora das filas curtas. Veja CONTENT-REPORT.md e VIDEO-VERIFICATION-RESULTS.json.
 
-Python 3, Node.js 22+ e Chromium (para E2E).
+O motor usa exibições, conclusões, respostas/confiança, erros recorrentes, calendário, Notion e provas próximas. Prioriza inéditos, alterna disciplinas/formatos, evita o mesmo item em seis horas e prefere outro formato do conceito na revisão. Exposição/conclusão não cria domínio; o indicador exige acertos independentes confiantes em dias distintos. Sessões **5/15/30 minutos**, fila finita e encerramento consciente. Há aviso se o catálogo elegível não preencher a estimativa. Duração estimada não garante tempo real de estudo.
+
+## Conexões
+
+Backend Netlify com acesso pessoal, cookies cifrados HttpOnly, OAuth Google com state/PKCE, OAuth Notion, seleção por nome e leitura Calendar/Notion/Drive. Calendar usa America/Sao_Paulo; Drive indexa pasta selecionada e extrai Google Docs/texto, preservando origem sem inventar páginas. Trechos escolhidos podem virar cartões privados locais. Histórico/snapshots ficam disponíveis offline.
+
+**Nenhuma conta real foi conectada/testada nesta sessão.** Testes de backend usam mocks. A ativação exige hospedagem e registro OAuth externo; veja BACKEND-SETUP.md. O aplicativo não pede tokens, IDs ou JSON no fluxo de conexão. Importação manual antiga permanece como alternativa.
+
+Limites: Notion não recebe escrita/histórico do app; PDF/OCR/diagramas, varredura recursiva do Drive e sync com app fechado não estão implementados. Dados locais não são cifrados pela senha do servidor. Backups contêm suas informações pessoais e devem permanecer privados.
+
+## Executar e testar
+
+Requisitos: Node.js 22+, Python 3 e Chromium para E2E. Validação local realizada com Node 24 e Python 3.12.
 
 ```sh
 npm ci
+npm run catalog:build
 TZ=America/Sao_Paulo npm test
+npm run test:usage
 npm run test:browser
 npm run build
 npm start
 ```
 
-O teste de navegador inicia e encerra seu próprio servidor e navegador. Usa `/usr/bin/chromium` se disponível, ou navegador instalado pelo Playwright; `CHROMIUM_PATH` substitui o executável. Em outra máquina: `npx playwright install --with-deps chromium`. `npm start` serve somente `site/` na porta 4173. Não sirva a raiz do repositório em hospedagem pública.
+`npm start` serve **somente site/** na porta 4173; as funções Netlify precisam do runtime Netlify. O modo local funciona sem backend. E2E inicia seu próprio servidor e usa `CHROMIUM_PATH`, `/usr/bin/chromium` ou Chromium do Playwright. Para instalar em outra máquina: `npx playwright install --with-deps chromium`.
 
-`npm run build` executa testes unitários, regressão e verificações estáticas e gera em `dist/`:
+`npm run test:usage` produz histórico **sintético** de uma sessão, três sessões, sete e trinta dias. Não é aprendizagem de uma pessoa. Resultados em FEED-SIMULATION-RESULTS.json. `npm run videos:verify` confere os arquivos públicos oficiais por HTTP e não testa reprodução.
 
-- `Orbita-Netlify-1.4.0.zip`: somente site público, index.html na raiz.
-- `Orbita-Codigo-Fonte-1.4.0.zip`: código, testes, documentação e fixtures sintéticas (incluindo código público antigo para teste de atualização).
-- `SHA256.json`: integridade dos ZIPs.
+## Adicionar e renovar conteúdo
 
-Não há transpiler: o build desta arquitetura é validação + empacotamento. Resultados de navegador ficam em BROWSER-RESULTS.json; testes de lógica em TEST-RESULTS.json. A CI executa os mesmos comandos antes de produzir o artefato.
+- `content/lessons.tsv`: fonte editorial das 153 explicações e perguntas, com alternativas e correção.
+- `content/videos.sources.json`: IDs/títulos, fonte oficial, commit, idioma e limitações da verificação.
+- `site/simulations.js`: biblioteca reutilizável de modelos; simulações novas exigem função física e testes, não só metadados.
+- `tools/build-catalog.cjs`: gera e valida `site/catalog/v1.json` e cobertura. IDs estáveis, tags, fonte, licença, duração, dificuldade, pré-requisitos, estado de revisão e versão por item.
+- O app busca/valida o catálogo ao abrir e por botão em Configurações; cache validado dá fallback offline. Atualização é adiada durante sessão/simulado ativos. Novos conteúdos entram pelo catálogo, sem alterar a navegação principal.
+- Workflow semanal audita fontes autorizadas e gera relatório. Não cria vídeos, não raspa material privado e não faz deploy sem revisão.
 
-## Publicação Netlify
+A configuração inicial de fonte depende da conta autorizada. Nenhum documento pessoal foi extraído nesta sessão. Os trechos privados que o usuário escolher não entram no JSON público nem no cache público do catálogo.
 
-Sem publicação realizada nesta sessão: falta acesso de deploy autorizado à conta do site existente. O endereço antigo não indica disponibilidade desta versão.
+## Publicar
 
-1. Exporte seu progresso e guarde o deploy anterior.
-2. No site existente da sua conta Netlify, envie **apenas** `Orbita-Netlify-1.4.0.zip` como deploy manual.
-3. Alternativa: conecte este repositório ao site, escolha a branch desejada e publique `site/`; `netlify.toml` já define a pasta. A branch de desenvolvimento é `feat/orbita-1.4-integrated`, ligada ao PR #1; esta entrega não mescla na main.
-4. Confirme `v1.4.0` no rodapé, HTTPS, manifest e ausência de erros. `_headers` configura CSP e revalidação de HTML/SW.
-5. Em uma instalação antiga, abra Configurações → Verificar atualização. Depois de exportar backup e finalizar o simulado, aplique a atualização disponível. Uma instalação 1.3 usa seu mecanismo anterior até receber a página nova; pode precisar fechar/reabrir a aba online.
+**Não houve publicação da 1.5 nesta sessão.** Sem acesso Netlify autorizado.
 
-## Testar no iPhone
+- **Aplicativo local/offline:** enviar `dist/Orbita-Netlify-1.5.0.zip` ao deploy manual do site existente. O ZIP contém somente assets públicos; index.html está na raiz. Esse modo não instala funções OAuth.
+- **Aplicativo com backend:** conectar este repositório ao Netlify, usando a branch desejada, com `netlify.toml`, `site/` e `netlify/functions/`. Preencher segredos somente no servidor e registrar callbacks Google/Notion conforme BACKEND-SETUP.md. A raiz do repositório nunca é a pasta pública.
+- O ZIP-fonte completo está em `dist/Orbita-Codigo-Fonte-1.5.0.zip`; hashes em `dist/SHA256.json`. Não publique o ZIP-fonte por Drop como site estático.
+- GitHub CI executa testes/empacotamento. Resultados remotos não foram confirmados, pois a API GitHub retornou Forbidden. Commits são disponibilizados na branch 1.5 e no PR existente; main não é mesclada automaticamente.
 
-1. Abra o domínio HTTPS no Safari → Compartilhar → Adicionar à Tela de Início.
-2. Abra o ícone online; responda uma questão informando confiança. Feche e reabra; confira Progresso.
-3. Em Exam Prep, configure um simulado. Responda, feche e reabra, e use Retomar simulado; conclua e confira o histórico.
-4. Exporte backup em Configurações; restaure-o e confira tentativas, notas, provas e imports.
-5. Ative modo avião, reabra e responda outra questão. Reabra novamente para conferir persistência. A primeira visita precisa ser online.
-6. No feed, deslize no corpo do cartão, ajuste os simuladores e encerre a sessão. O gesto não deve trocar cartões quando estiver usando um controle.
-7. Teste uma atualização online pelo painel de Configurações; o progresso deve permanecer. Caso apareça aviso de armazenamento, exporte backup antes de fechar.
+## iPhone
 
-Chromium mobile/desktop e migração de SW são automatizados; Safari físico e instalação standalone ainda exigem teste no aparelho. Armazenamento do iOS pode ser removido pelo sistema; backups periódicos continuam essenciais. Não há sync entre aparelhos/domínios.
+Publique em HTTPS → abra no Safari → Compartilhar → Adicionar à Tela de Início. Abra online uma vez para preparar assets e catálogo offline. Teste uma resposta, reabra e confira Progresso; exporte/restaure backup; ative modo avião e teste exercícios/simulações. Vídeos e novas sincronizações precisam de internet.
 
-## Privacidade e integrações
+Em Configurações, verifique/aplique atualização após terminar o simulado e exportar backup. Mudança de versão não deve apagar progresso. Safari/iPhone físico e instalação standalone ainda precisam de teste no aparelho; Chromium não os substitui. O iOS pode remover armazenamento: mantenha backups periódicos.
 
-Snapshots e backups reais ficam fora do repositório público e do deploy. Os exemplos em `tests/fixtures/` são sintéticos. Dados privados importados são armazenados localmente, não enviados ao servidor; backups exportados passam a conter esses dados e devem permanecer privados. Não cole tokens no app.
-
-OAuth Google Calendar/Notion e publicação automatizada precisam das conexões especificadas em [INTEGRATIONS.md](INTEGRATIONS.md). Sem backend autenticado, esta versão mantém importação manual. PDF, tutor generativo e sincronização entre aparelhos seguem pendentes. Consulte [auditoria](AUDIT-1.4.md), [testes](TEST-REPORT.md), [changelog](CHANGELOG.md) e [pendências](NEXT-STEPS.md).
+Relatórios: TEST-REPORT.md, CONTENT-REPORT.md, CONTENT-COVERAGE.json, FEED-SIMULATION-RESULTS.json, VIDEO-VERIFICATION-RESULTS.json e NEXT-STEPS.md.

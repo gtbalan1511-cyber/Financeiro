@@ -1,6 +1,6 @@
 {
   "browser": "Chromium",
-  "executedAt": "2026-10-23T13:46:08.656Z",
+  "executedAt": "2026-10-23T15:05:55.965Z",
   "results": [
     {
       "name": "quiz/confiança/persistência 390",
@@ -27,7 +27,7 @@
       "status": "PASS"
     },
     {
-      "name": "swipe/slider/movimento reduzido/feed finito 390",
+      "name": "swipe/slider/feed finito 390",
       "status": "PASS"
     },
     {
@@ -67,7 +67,7 @@
       "status": "PASS"
     },
     {
-      "name": "swipe/slider/movimento reduzido/feed finito 1440",
+      "name": "swipe/slider/feed finito 1440",
       "status": "PASS"
     },
     {
@@ -80,6 +80,14 @@
     },
     {
       "name": "sem exceções ou envio externo de dados 1440",
+      "status": "PASS"
+    },
+    {
+      "name": "402 cartões carregados/renovação/30 minutos/36 simulações no navegador",
+      "status": "PASS"
+    },
+    {
+      "name": "vídeo indisponível e catálogo insuficiente sem repetição artificial",
       "status": "PASS"
     },
     {
@@ -103,7 +111,7 @@
       "status": "PASS"
     },
     {
-      "name": "migração SW 1.3 → 1.4 e offline preservam progresso",
+      "name": "migração SW 1.3 → 1.5 e offline preservam progresso",
       "status": "PASS"
     }
   ]

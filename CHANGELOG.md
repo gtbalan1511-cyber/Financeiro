@@ -1,3 +1,14 @@
+# 1.5.0 — 23/10/2026
+
+- Catálogo externo versionado: 402 atividades (153 explicações, 153 desafios, 36 simulações, 60 referências de vídeo), cobrindo nove disciplinas. Contagem de conceitos e limitações explícitas.
+- 60 IDs/títulos de vídeos conferidos por HTTP em fontes oficiais MIT OCW e deduplicados; player oficial sob ação do usuário. Reprodução/duração exata não validadas nesta rede.
+- Recomendação com histórico de exibição/conclusão/resposta, confiança, erros, diversidade de formatos/disciplinas, intervalo de repetição, revisão espaçada, Notion, Calendar e provas próximas. Sessões 5/15/30, fila estimada finita e continuação consciente.
+- Biblioteca de 36 modelos ajustáveis e gráficos/traçador animado, com hipóteses e movimento reduzido. Biblioteca separada para aulas que excedem a duração do feed.
+- Backend Netlify somente leitura: acesso pessoal, cookies cifrados, OAuth Google state/PKCE, OAuth Notion, seletores por nome, sincronização por abertura, Calendar SP, Notion data sources e Drive com metadados/texto. Implementado e testado com mocks, sem contas reais conectadas.
+- Trechos de documentos autorizados podem virar cartões privados locais, com origem e sem paginação inventada. Nunca entram no catálogo público.
+- Cache validado de catálogo, atualização adiada durante sessão, preservação de simulados/backups e migração de SW. Checagens de origem e sessão antes de APIs privadas.
+- Auditoria periódica de fontes no GitHub, ferramentas de cobertura, cenários sintéticos de uso e pacotes separados. Sem publicação Netlify nesta entrega.
+
 # 1.4.0 — 23/10/2026
 
 - Exam Prep configurável por conteúdo, quantidade e objetivo P2/P3; retomada persistente, relatórios e histórico.
