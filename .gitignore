@@ -7,3 +7,9 @@ _contexto_privado/
 .DS_Store
 __pycache__/
 .netlify/
+
+.wrangler/
+.dev.vars*
+*.db
+*.db-shm
+*.db-wal

@@ -1,6 +1,6 @@
 {
   "name": "orbita-estudos",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "private": true,
   "scripts": {
     "start": "python -m http.server 4173 --directory site",
@@ -10,9 +10,18 @@
     "catalog:build": "node tools/build-catalog.cjs",
     "test:usage": "node tools/simulate-use.cjs",
     "videos:verify": "python tools/verify-video-sources.py",
-    "start:integrated": "node server/index.cjs"
+    "start:integrated": "node server/index.cjs",
+    "test:multiplatform": "node tests/multiplatform.cjs",
+    "test:worker": "node tests/worker.cjs",
+    "cloudflare:check": "wrangler deploy --dry-run",
+    "cloudflare:deploy": "wrangler deploy",
+    "cloudflare:dev": "wrangler dev --local"
   },
   "devDependencies": {
-    "playwright": "1.62.1"
+    "playwright": "1.62.1",
+    "wrangler": "4.152.0"
+  },
+  "engines": {
+    "node": ">=24"
   }
 }

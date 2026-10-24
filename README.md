@@ -1,3 +1,13 @@
+# Órbita Estudos 1.6.0 — Missão 02
+
+Evolução da branch 1.5.0, preservando catálogo, modelos, simulados e dados locais. Novos: progresso privado cifrado, D1/SQLite, retomada de exercícios em outro aparelho, fila offline com conflito explícito, cadastro de disciplinas e navegação desktop.
+
+**Estado real:** testes locais; sem URL de produção nova. Cloudflare não autenticada e clientes OAuth ausentes. Não declarar integração real nem iPhone físico validado. [Arquitetura](docs/MISSAO-02-ARQUITETURA.md), [investigação Astra](docs/REA-ASTRA.md), [ativação gratuita](docs/DEPLOY-CLOUDFLARE.md), [testes](TEST-REPORT.md).
+
+`npm ci`, `npm test`, `npm run test:browser`, `npm run test:multiplatform`, `npm run test:worker`, `npm run cloudflare:check`. Node 24+. Playwright requer navegadores/bibliotecas: `npx playwright install --with-deps chromium firefox webkit`. Execução Node: `npm run start:integrated` (sem configuração privada, opera só local). Cloudflare: Worker + assets + D1; nada depende do computador pessoal depois de publicar em conta autorizada.
+
+## Documentação da versão anterior (histórica)
+
 > Conexões: há agora um servidor Node independente de provedor em `server/index.cjs`, com aplicativo e `/api/` na mesma origem. Veja [BACKEND-SETUP.md](BACKEND-SETUP.md). Não houve publicação nem autorização real das contas.
 
 > Configuração pessoal da versão existente: veja [PERSONAL-SETUP.md](PERSONAL-SETUP.md). Um único pacote privado pode ser mesclado sem apagar progresso. Não houve mudança de hospedagem ou conexão real às contas nesta rodada.

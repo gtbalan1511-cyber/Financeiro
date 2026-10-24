@@ -1,3 +1,15 @@
+# 1.6.0 — 24/10/2026 — Missão 02
+
+- Evolução de 6b4db02/1.5.0 sem reconstrução. Auditoria das branches, PR e publicação antiga; referência Astra observada com Playwright público.
+- API privada GET/PUT /api/progress com revisão condicional, cifra, retransmissão idempotente, histórico de 20 versões e adaptadores SQLite/D1. Limite explícito de 1 MB de estado.
+- Cliente conserva alterações offline e sincroniza após autenticação/reconexão; conflito mantém cópias separadas até decisão explícita. Dados remotos não substituem atividades em andamento.
+- Exercício comum retomável entre aparelhos, cadastro de disciplina sem inventar conteúdo e navegação lateral/atalhos no desktop; PWA e UI móvel preservadas.
+- Worker/assets/D1, migração aditiva, configuração e CI/CD preparados para Cloudflare Free. Nenhum recurso remoto criado ou plano pago contratado.
+- Corrigida interpretação de linhas alteradas no D1 com trigger de histórico; corpo UTF-8 do servidor montado antes da decodificação; chamadas concorrentes de sync compartilham a mesma operação.
+- Limite de teste: WebKit Linux retorna erro interno ao navegar offline com Service Worker, reproduzido em HTTP/HTTPS; iPhone real e produção permanecem não verificados.
+
+## Histórico anterior
+
 ## Conexões — infraestrutura independente de provedor
 
 - Servidor Node com aplicativo e API na mesma origem, corpo limitado e isolamento de arquivos públicos; Dockerfile sem dados pessoais.

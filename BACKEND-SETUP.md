@@ -1,3 +1,11 @@
+# Atualização Missão 02 / 1.6.0
+
+Hospedagem alvo gratuita: Cloudflare Workers + D1, frontend/API na mesma origem. Guia vigente: [DEPLOY-CLOUDFLARE.md](docs/DEPLOY-CLOUDFLARE.md). Backend Node preservado para execução local/contêiner; `ORBITA_DB_PATH` habilita SQLite persistente. Sem essa variável, progresso entre aparelhos fica indisponível explicitamente. Node 24+.
+
+API /api/progress recebe revisão e estado, guarda cifra e histórico, protege contra concorrência. Tokens OAuth continuam em cookies cifrados HttpOnly por aparelho; não são dados do catálogo nem do banco de progresso. Nenhum cliente OAuth real configurado nesta rodada. Senha/segredo são registrados na hospedagem privada, nunca no código ou no chat.
+
+## Documentação anterior (histórica)
+
 # Ativação das conexões no ambiente existente
 
 ## Estado verificado nesta rodada

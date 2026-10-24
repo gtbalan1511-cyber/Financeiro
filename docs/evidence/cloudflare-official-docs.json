@@ -1,0 +1,17 @@
+[
+  {
+    "url": "https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/d1/platform/pricing.mdx",
+    "status": 200,
+    "sha256": "d7e5fb21c6c5fd041387d675f4d86bbb1f26c03315803e92c5b68819d2b8db70"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/d1/platform/limits.mdx",
+    "status": 200,
+    "sha256": "35b8a2bf65e12377374b7f1fe4d8070d472a8ad10b7955a579aab719b42b8314"
+  },
+  {
+    "url": "https://raw.githubusercontent.com/cloudflare/cloudflare-docs/production/src/content/docs/workers/platform/pricing.mdx",
+    "status": 200,
+    "sha256": "930b21e13038696c9b59fabeef48045e589aba9ffdbe93979bbc7dc25b2badb7"
+  }
+]

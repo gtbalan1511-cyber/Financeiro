@@ -1,3 +1,14 @@
+# Pendências atuais — Missão 02 / 1.6.0
+
+1. Criar/autorizar conta Cloudflare Free, disponibilizando acesso seguro; CLI atual não autenticada. Provisionar D1 real, cadastrar segredos privados, publicar e validar URL HTTPS. Não existe deploy remoto aceito. Guia: docs/DEPLOY-CLOUDFLARE.md.
+2. Criar clientes OAuth próprios do Órbita (Google Calendar/Drive e Notion), registrar redirects na origem final e consentir nas contas/fontes. Executar pelo menos uma operação real em cada serviço e testar revogação/renovação. Conexões do ChatGPT não autorizam o app.
+3. Validar Safari/iPhone físico, instalação standalone e offline. WebKit automatizado: erro interno na reabertura offline do runtime Linux; diagnóstico não comprova comportamento iOS. Validar também computador Windows/macOS real.
+4. Completar ingestão PDF/slides/OCR com fonte/página e revisão pedagógica dos materiais autorizados. Conteúdo atual é autoral introdutório, não catálogo oficial completo. Nenhum documento pessoal inventado.
+5. Tutor generativo/fotos, podcasts e escrita de progresso/erros ao Notion não estão implementados/ativos. Tutor atual é guiado sem API. Exigem decisões de provedor/autorização e testes reais; não ativar cobrança.
+6. Verificar CI remoto após push, quotas/CPU do Workers Free na conta, banco real e sincronização entre dois dispositivos reais. Preservar backup do domínio antigo antes de migrar. PR continua revisável; sem merge automático de entrega incompleta.
+
+## Pendências e relatos anteriores (históricos; consultar estado atual acima)
+
 ## Bloqueio atual da integração real
 
 - Disponibilizar acesso ao editor/painel do aplicativo atual com execução segura de Node ou proxy de `/api/` na mesma origem. Não há conector de publicação neste ambiente; acesso HTTP remoto foi bloqueado (403).

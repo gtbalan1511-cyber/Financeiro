@@ -1,6 +1,6 @@
 /* Cada versão usa um conjunto estático completo. Atualização só assume controle após ação explícita. */
-const CACHE='orbita-v1.5.0-connections-2';
-const ASSETS=['./','./index.html','./data.js','./features.js','./app.js','./simulations.js','./recommendations.js','./catalog.js','./connections.js','./catalog/v1.json','./style.css','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png'];
+const CACHE='orbita-v1.6.0-progress-1';
+const ASSETS=['./','./index.html','./data.js','./features.js','./app.js','./simulations.js','./recommendations.js','./catalog.js','./connections.js','./progress-sync.js','./catalog/v1.json','./style.css','./manifest.webmanifest','./assets/icon-192.png','./assets/icon-512.png'];
 const urls=ASSETS.map(p=>new URL(p,self.registration.scope).href);
 self.addEventListener('install',event=>event.waitUntil((async()=>{
   try{const cache=await caches.open(CACHE);await cache.addAll(urls)}catch(error){await caches.delete(CACHE);throw error}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-24T04:12:37.156Z",
+  "remoteDeployment": false,
+  "results": [
+    {
+      "name": "Worker real local reconhece D1 e informa OAuth ausente",
+      "status": "PASS"
+    },
+    {
+      "name": "assets e cabeçalhos de segurança na origem do Worker",
+      "status": "PASS"
+    },
+    {
+      "name": "sessão, CSRF, escrita condicional e retransmissão idempotente no D1 local",
+      "status": "PASS"
+    },
+    {
+      "name": "reinício do Worker preserva banco e sessão válidos",
+      "status": "PASS"
+    },
+    {
+      "name": "histórico cifrado mantém 20 versões para recuperação",
+      "status": "PASS"
+    }
+  ]
+}

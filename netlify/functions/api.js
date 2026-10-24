@@ -3,7 +3,7 @@ const crypto=require('node:crypto');
 const {equal,codec,cookies,cookie}=require('./lib/security');
 const TZ='America/Sao_Paulo';
 const loginAttempts=new Map();
-function createHandler(env=process.env,request=fetch){return async event=>{
+function createHandler(env=process.env,request=fetch,progress=null){return async event=>{
  const headers={'Content-Type':'application/json; charset=utf-8','Cache-Control':'private, no-store','X-Content-Type-Options':'nosniff','Referrer-Policy':'no-referrer'},setCookies=[];
  const response=(status,data)=>({statusCode:status,headers,multiValueHeaders:{'Set-Cookie':setCookies},body:JSON.stringify(data)});
  const redirect=location=>({statusCode:302,headers:{...headers,Location:location},multiValueHeaders:{'Set-Cookie':setCookies},body:''});
@@ -13,7 +13,7 @@ function createHandler(env=process.env,request=fetch){return async event=>{
  const configured=!!base&&/^https:\/\/[^/]+\/?$/.test(base)&&!!env.ORBITA_OWNER_PASSWORD&&env.ORBITA_OWNER_PASSWORD.length>=16&&!!env.ORBITA_SESSION_SECRET&&env.ORBITA_SESSION_SECRET.length>=32;
  if(path==='status'&&method==='GET'){
    let authorized=false,google=false,notion=false,googleSelection={},notionSelection={};if(configured){const c=codec(env.ORBITA_SESSION_SECRET),jar=cookies(event);authorized=!!c.open(jar['__Host-orbita-owner']);google=authorized&&!!c.open(jar['__Host-orbita-google']);notion=authorized&&!!c.open(jar['__Host-orbita-notion']);if(authorized){const g=c.open(jar['__Host-orbita-google'])||{},n=c.open(jar['__Host-orbita-notion'])||{};googleSelection={calendar:g.calendar||null,folder:g.folder||null};notionSelection={database:n.database||null,databases:n.databases||[n.database].filter(Boolean)}}}
-   return response(200,{configured,authorized,google:{configured:!!env.GOOGLE_CLIENT_ID&&!!env.GOOGLE_CLIENT_SECRET,connected:google,selection:googleSelection},notion:{configured:!!env.NOTION_CLIENT_ID&&!!env.NOTION_CLIENT_SECRET,connected:notion,selection:notionSelection},timezone:TZ,readOnly:true})
+   return response(200,{configured,authorized,google:{configured:!!env.GOOGLE_CLIENT_ID&&!!env.GOOGLE_CLIENT_SECRET,connected:google,selection:googleSelection},notion:{configured:!!env.NOTION_CLIENT_ID&&!!env.NOTION_CLIENT_SECRET,connected:notion,selection:notionSelection},timezone:TZ,readOnly:true,progress:{configured:!!progress}})
  }
  if(!configured)return response(503,{error:'Servidor privado não configurado. O modo local continua disponível.',code:'NOT_CONFIGURED'});
  const origin=new URL(base).origin,c=codec(env.ORBITA_SESSION_SECRET),jar=cookies(event),session=c.open(jar['__Host-orbita-owner']);
@@ -26,6 +26,14 @@ function createHandler(env=process.env,request=fetch){return async event=>{
    loginAttempts.delete(key);save('owner',{user:'owner'});return response(200,{authorized:true})
  }
  if(!session)return response(401,{error:'Entre na sua área pessoal antes de conectar as contas.'});
+ if(path==='progress'){
+  if(!progress)return response(503,{error:'Armazenamento privado não configurado.',code:'PROGRESS_NOT_CONFIGURED'});
+  try{
+   if(method==='GET')return response(200,await progress.read());
+   if(method==='PUT'){const body=JSON.parse(event.body||'{}');const result=await progress.write(body.revision,body.data);const {status,...payload}=result;return response(status,payload)}
+   return response(405,{error:'Método não permitido'});
+  }catch{return response(503,{error:'Não foi possível ler ou gravar o progresso. A cópia local foi preservada.'})}
+ }
  if(path==='logout'&&method==='POST'){for(const name of ['owner','google','notion','flow'])setCookies.push(cookie(name,'',0));return response(200,{disconnected:true})}
  const params=event.queryStringParameters||{};
  const oauthConfig=provider=>provider==='google'?{id:env.GOOGLE_CLIENT_ID,secret:env.GOOGLE_CLIENT_SECRET,authorize:'https://accounts.google.com/o/oauth2/v2/auth',token:'https://oauth2.googleapis.com/token'}:{id:env.NOTION_CLIENT_ID,secret:env.NOTION_CLIENT_SECRET,authorize:'https://api.notion.com/v1/oauth/authorize',token:'https://api.notion.com/v1/oauth/token'};

@@ -1,6 +1,6 @@
 {
   "browser": "Chromium",
-  "executedAt": "2026-10-23T16:46:18.863Z",
+  "executedAt": "2026-10-24T04:13:52.588Z",
   "results": [
     {
       "name": "quiz/confiança/persistência 390",
@@ -119,7 +119,7 @@
       "status": "PASS"
     },
     {
-      "name": "migração SW 1.3 → 1.5 e offline preservam progresso",
+      "name": "migração SW 1.3 → 1.6 e offline preservam progresso",
       "status": "PASS"
     }
   ]

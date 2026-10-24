@@ -1,3 +1,33 @@
+# Verificação atual — Órbita 1.6.0 / Missão 02 (24/10/2026)
+
+| Conjunto | Aprovados | Reprovados finais | Bloqueados |
+| --- | ---: | ---: | ---: |
+| Node (inclui segurança, regras, APIs e persistência) | 72 | 0 | 0 |
+| Regressões VM | 26 | 0 | 0 |
+| Verificações estáticas | 15 | 0 | 0 |
+| Playwright Chromium regressões mobile/desktop/PWA | 30 | 0 | 0 |
+| Playwright Chromium/Firefox/WebKit com HTTPS e dois contextos | 23 | 0 | 1 |
+| Worker Cloudflare real local + D1 local | 5 | 0 | 0 |
+| **Total automatizado** | **171** | **0** | **1** |
+
+Dispositivos físicos: **0**. Produção nova: **não publicada**. Testes locais não equivalem a iPhone real, Windows/macOS reais, OAuth de contas reais ou sincronização em produção.
+
+Evidências: BROWSER-RESULTS.json, MULTIPLATFORM-RESULTS.json, WORKER-RESULTS.json. Node/VM/estáticos executados por npm test e pelo build. Contagem por cenários/asserções reportados pelas suítes, não por cada comando interno. Não somar reexecuções como testes novos.
+
+Fluxo validado com backend/banco locais reais: entrar em dois contextos, iniciar questão no desktop pelo teclado, retomar seleção/confiança no mobile, corrigir uma vez, reabrir, responder offline, reconectar e recuperar no outro contexto; edições simultâneas bloqueiam substituição, preservam duas versões e permitem resolução explícita. Cadastro de disciplina sincroniza sem fabricar questões para ela. Nenhum token real ou material pessoal usado.
+
+D1: bundle do Worker executado em workerd, migrations locais, login/origem, escrita CAS/idempotência, reinício e histórico cifrado de 20 versões. **Não é D1 remoto**. Dry-run do bundle aprovado; não é publicação. CLI whoami comprovou ausência de conta autenticada.
+
+Limitação: WebKit Playwright Linux retorna “WebKit encountered an internal error” ao recarregar offline com Service Worker, tanto em HTTP localhost quanto em HTTPS local. Reprodução mínima confirmou que o documento antigo permanece; não contabilizar recarga como sucesso. A resposta offline, cópia local e sincronização após voltar online passaram. Caso registrado como **bloqueado**, não como teste aprovado. Validação em Safari/iPhone e HTTPS real permanece necessária.
+
+Falhas resolvidas: D1 contava também alterações da trigger, causando resposta 409 apesar de gravação feita; CAS agora considera alterações positivas e preserva revisão condicional. Fixture TLS Chromium precisava confiar no certificado de teste para instalar SW; execução de produção mantém TLS normal. Cenários foram ajustados para retomar explicitamente o exercício salvo. Chamadas simultâneas do sync passaram a aguardar a mesma operação; atividade em andamento adia aplicação de dados remotos. Regressões afetadas reexecutadas.
+
+60/60 metadados oficiais de vídeos conferidos por HTTP nesta rodada; **0 reproduções validadas**, como antes. Quatro simulações de uso executadas são sintéticas e não comprovam aprendizagem humana. Revisão técnica/pedagógica integral do conteúdo continua pendente.
+
+OAuth Google/Calendar/Drive/Notion: testes com mocks apenas. **Zero operações de conta real executadas** por ausência de clientes próprios/consentimento. Notion continua somente leitura. Tutor generativo, podcast e extração integral PDF/OCR não estão implementados. Não tratar esses itens como ativos.
+
+## Relatos de versões anteriores (históricos)
+
 ## Integrações e backend independente — rodada atual
 
 - `TZ=America/Sao_Paulo npm test`: 65 testes Node, 26 verificações VM e 15 verificações estáticas aprovados.
