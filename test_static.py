@@ -7,7 +7,7 @@ def test(name,fn):
  except Exception as e:checks.append((name,f'FAIL {e}'))
 def yes(cond,msg='falhou'):
  assert cond,msg
-for n in ('app.js','data.js','features.js','sw.js'):
+for n in ('app.js','data.js','features.js','sw.js','catalog.js','recommendations.js','simulations.js','connections.js'):
  test('Sintaxe '+n,lambda n=n:yes(subprocess.run(['node','--check',str(site/n)],capture_output=True).returncode==0))
 test('manifest válido',lambda:yes(json.loads((site/'manifest.webmanifest').read_text())['display']=='standalone'))
 test('SW inclui features.js',lambda:yes('./features.js' in (site/'sw.js').read_text()))

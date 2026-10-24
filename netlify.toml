@@ -1,0 +1,14 @@
+[build]
+  publish = "site"
+
+# Sem build remoto obrigatório, backend ou serviços pagos.
+# A suíte local/CI deve passar antes do deploy; somente site/ é público.
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
+  force = true

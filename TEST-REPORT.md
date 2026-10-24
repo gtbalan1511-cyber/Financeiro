@@ -1,18 +1,95 @@
-# Testes — 1.3.0 — 23/10/2026
+# Verificação atual — Órbita 1.6.0 / Missão 02 (24/10/2026)
 
-Executados nesta entrega, sem reaproveitar alegações da versão anterior:
+**Atualização remota:** os jobs verify das execuções GitHub Actions 40061954130 e 40061954155 passaram no commit 9118fce. Deploy pulado, não publicado. A publicação Sites anterior responde, mas não contém a versão 1.6; Notion tem cliente configurado, sem consentimento conectado. Ver docs/INFRA-ATUAL.md.
 
-- `TZ=America/Sao_Paulo node test_logic.cjs`: 26/26 aprovados. Quizzes, confiança, resolução sem acerto fictício, importações sintéticas, exercício diário, notas, simulado, persistência, validação de estruturas e URLs e proteção contra dupla correção. Resultado em TEST-RESULTS.json.
-- `python test_static.py`: 11/11 aprovados. Sintaxe dos quatro scripts, manifest, assets offline, ordem de carregamento, headers e verificações de ausência de dados privados/segredos conhecidos. Não é uma auditoria de segurança completa.
-- `node tests/browser.cjs`: Chromium headless, 390×844 e 1440×900. Em ambas as dimensões: nove matérias, quiz com confiança, persistência após reload, download e reimportação de backup, três snapshots sintéticos, exercício diário Hill, navegação, ausência de overflow horizontal nas páginas verificadas, simulado completo, fim consciente do feed, recarga offline via Service Worker e nenhuma exceção JavaScript capturada. Resultado em BROWSER-RESULTS.json.
-- `python package.py`: empacotamento estático e checagem de index.html na raiz do deploy, excluindo fixtures e diretórios privados. Não há compilação/transpilação exigida pela arquitetura. O ZIP-fonte foi extraído em diretório temporário e sua suíte de lógica passou novamente (26/26); o ZIP de deploy contém 12 arquivos com index.html na raiz.
 
-## Falha inicial e correção
+| Conjunto | Aprovados | Reprovados finais | Bloqueados |
+| --- | ---: | ---: | ---: |
+| Node (inclui segurança, regras, APIs e persistência) | 72 | 0 | 0 |
+| Regressões VM | 26 | 0 | 0 |
+| Verificações estáticas | 15 | 0 | 0 |
+| Playwright Chromium regressões mobile/desktop/PWA | 30 | 0 | 0 |
+| Playwright Chromium/Firefox/WebKit com HTTPS e dois contextos | 23 | 0 | 1 |
+| Worker Cloudflare real local + D1 local | 5 | 0 | 0 |
+| **Total automatizado** | **171** | **0** | **1** |
 
-O teste original dependia de `_contexto_privado/`, inexistente no ZIP público, e de identificador privado específico. A suíte agora usa fixtures sintéticas redistribuíveis. Não recuperamos nem inventamos dados reais do usuário.
+Dispositivos físicos: **0**. Produção nova: **não publicada**. Testes locais não equivalem a iPhone real, Windows/macOS reais, OAuth de contas reais ou sincronização em produção.
 
-## Não validados
+Evidências: BROWSER-RESULTS.json, MULTIPLATFORM-RESULTS.json, WORKER-RESULTS.json. Node/VM/estáticos executados por npm test e pelo build. Contagem por cenários/asserções reportados pelas suítes, não por cada comando interno. Não somar reexecuções como testes novos.
 
-Safari/iPhone real, instalação pela tela inicial e comportamento do armazenamento sob pressão no iOS; gestos físicos e modo standalone; publicação HTTPS e aplicação dos headers no Netlify; atualização partindo de uma instalação antiga 1.2.0; integrações OAuth e dados acadêmicos reais. WebKit não estava instalado e o download retornou HTTP 403 (Domain forbidden). Os domínios de download foram adicionados ao rascunho de rede, sem mudança efetiva observada na instância.
+Fluxo validado com backend/banco locais reais: entrar em dois contextos, iniciar questão no desktop pelo teclado, retomar seleção/confiança no mobile, corrigir uma vez, reabrir, responder offline, reconectar e recuperar no outro contexto; edições simultâneas bloqueiam substituição, preservam duas versões e permitem resolução explícita. Cadastro de disciplina sincroniza sem fabricar questões para ela. Nenhum token real ou material pessoal usado.
 
-Testes de navegador usam HTTP local, permitido para Service Worker em loopback. Isso demonstra offline nesse navegador, não instalação no iOS. Testes não asseguram exatidão integral de todo conteúdo pedagógico; recomenda-se revisão com professor.
+D1: bundle do Worker executado em workerd, migrations locais, login/origem, escrita CAS/idempotência, reinício e histórico cifrado de 20 versões. **Não é D1 remoto**. Dry-run do bundle aprovado; não é publicação. CLI whoami comprovou ausência de conta autenticada.
+
+Limitação: WebKit Playwright Linux retorna “WebKit encountered an internal error” ao recarregar offline com Service Worker, tanto em HTTP localhost quanto em HTTPS local. Reprodução mínima confirmou que o documento antigo permanece; não contabilizar recarga como sucesso. A resposta offline, cópia local e sincronização após voltar online passaram. Caso registrado como **bloqueado**, não como teste aprovado. Validação em Safari/iPhone e HTTPS real permanece necessária.
+
+Falhas resolvidas: D1 contava também alterações da trigger, causando resposta 409 apesar de gravação feita; CAS agora considera alterações positivas e preserva revisão condicional. Fixture TLS Chromium precisava confiar no certificado de teste para instalar SW; execução de produção mantém TLS normal. Cenários foram ajustados para retomar explicitamente o exercício salvo. Chamadas simultâneas do sync passaram a aguardar a mesma operação; atividade em andamento adia aplicação de dados remotos. Regressões afetadas reexecutadas.
+
+60/60 metadados oficiais de vídeos conferidos por HTTP nesta rodada; **0 reproduções validadas**, como antes. Quatro simulações de uso executadas são sintéticas e não comprovam aprendizagem humana. Revisão técnica/pedagógica integral do conteúdo continua pendente.
+
+OAuth Google/Calendar/Drive/Notion: testes com mocks apenas. **Zero operações de conta real executadas** por ausência de clientes próprios/consentimento. Notion continua somente leitura. Tutor generativo, podcast e extração integral PDF/OCR não estão implementados. Não tratar esses itens como ativos.
+
+## Relatos de versões anteriores (históricos)
+
+## Integrações e backend independente — rodada atual
+
+- `TZ=America/Sao_Paulo npm test`: 65 testes Node, 26 verificações VM e 15 verificações estáticas aprovados.
+- `npm run test:browser`: 30 cenários Chromium aprovados, com mobile/desktop e preservação de progresso/backup/offline. Novo cenário usa API explicitamente simulada para conferir POST, seleção de duas bases, cadastro de avaliação e mensagem de falha sem perda da cópia anterior.
+- O adaptador HTTP foi testado com servidor/socket reais: app/API, JSON de configuração ausente, isolamento de caminhos, método e limite de corpo. OAuth e conteúdo dos provedores foram simulados; nenhuma conta real foi autorizada.
+- `npm run test:usage` executado, sem alteração do catálogo; resultados sintéticos não comprovam aprendizagem.
+- `npm run build` executado, gerando pacotes públicos por allowlist; não constitui publicação. Dockerfile preparado, imagem não construída/testada.
+- Verificação da URL atual falhou por bloqueio de acesso (403 do proxy); o diagnóstico não detectou API acessível. Não há ferramenta ou credencial de implantação utilizável e faltam clientes OAuth do aplicativo.
+- Nenhuma conexão real, leitura de dados do usuário via API ou deploy foi executado. A missão de integração permanece dependente do acesso à infraestrutura atual e consentimento externo. Safari físico e estruturas reais das quatro fontes Notion permanecem sem validação.
+
+## Configuração pessoal 1.5.0 — 23/10/2026
+
+- `TZ=America/Sao_Paulo npm test`: 56 testes Node, 26 verificações VM e 15 verificações estáticas aprovados.
+- `npm run test:browser`: 29 cenários Chromium aprovados, incluindo mobile 390×844 e desktop 1440×900. Novo cenário cobre importação única duas vezes, preservação da tentativa anterior, correção do exercício diário, backup, restauração e reabertura offline. A migração de Service Worker também preserva progresso.
+- `npm run test:usage`: cenários de uso sintético executados; resultados em FEED-SIMULATION-RESULTS.json. Não representam aprendizagem real.
+- `npm run build`: pacote público por allowlist e verificações locais; nenhum deploy executado.
+- O pacote real foi analisado e convertido fora do repositório: quatro eventos, três dificuldades, quatro referências Notion, três materiais, nenhuma avaliação confirmada; nenhum registro recusado. Os quatro blocos encontram exercícios autorais correspondentes. Isso valida conversão, não comprova sincronização ou conclusão dos exercícios.
+- Nenhum dado pessoal foi inserido no aplicativo remoto. A URL fornecida pelo usuário teve acesso bloqueado pelo proxy (403). Não houve acesso ao editor da publicação.
+- OAuth real, acesso a PDFs privados e Safari físico não foram testados. Correções numéricas seguem os dados/resoluções disponíveis; não há avaliação automática de respostas discursivas.
+
+# Validação 1.5.0 — 23/10/2026
+
+Linux, Node 24.19.0, Python 3.12, Playwright 1.62.1, Chromium headless. Não executado Safari físico.
+
+## Testes executados
+
+- `npm test`: **45 testes Node** (21 regras base, 10 catálogo/recomendação/modelos e 14 backend com mocks), **26 testes de integração/regressão por VM** e **15 verificações estáticas**. Sem skips na execução final.
+- `npm run test:browser`: **28 cenários** Chromium. Mobile 390×844 e desktop 1440×900, quiz/confiança, simulado retomável, backup/restauração, dados manuais, sessão, swipe/controles, layout/Voltar, offline/persistência, concorrência, quota e dados corrompidos. Cenários adicionais carregam catálogo substancial, exercitam os **36 modelos no DOM**, simulam vídeo indisponível/catálogo insuficiente, preservam dados privados fora do cache e migram SW 1.3 → 1.5 mantendo progresso.
+- `npm run test:usage`: cenários de uso **sintéticos**, com respostas geradas por código. Não se trata de estudo humano real. Resultados completos em FEED-SIMULATION-RESULTS.json.
+- `python tools/verify-video-sources.py`: **60/60 fontes oficiais retornaram HTTP 200 e corresponderam ao ID/título**, em commits fixos MIT OCW. Resultado em VIDEO-VERIFICATION-RESULTS.json. Reprodução e duração exata dos vídeos: **não verificadas**. YouTube/oEmbed e site MIT direto retornaram HTTP 403; repositórios oficiais públicos no GitHub foram acessíveis.
+- `npm run build`: validação e pacotes por allowlist. ZIP Netlify contém somente assets públicos; código de funções e documentação ficam no ZIP-fonte/Git. ZIP estático não ativa backend. Integridade dos dois ZIPs conferida; o ZIP-fonte foi extraído e `npm test` passou novamente. O servidor local respondeu com catálogo 1.5.0 de 402 itens.
+
+## Uso sintético com o catálogo final de 402 atividades
+
+| Cenário | Exibições | Itens únicos | Repetições | Desafios respondidos pelo simulador |
+| --- | ---: | ---: | ---: | ---: |
+| Uma sessão de 30 min | 8 | 8 | 0 | 4 |
+| Três sessões no dia | 36 | 36 | 0 | 13 |
+| Sete dias, 3 sessões/dia | 306 | 179 | 127 | 132 |
+| Trinta dias, 3 sessões/dia | 1346 | 375 | 971 | 587 |
+
+Nos cenários longos houve cobertura das nove disciplinas e quatro formatos. Os vinte vídeos longos não cabem em 30 minutos e ficam fora dessas filas; há no máximo 382 itens elegíveis para essas filas. Nesta execução, 375 foram exibidos: sete elegíveis ainda não foram selecionados, pois as dificuldades e revisões receberam prioridade. Não se afirma cobertura integral de todo item em 30 dias. Repetições incluem revisão intencional; o relatório registra justificativas. A quantidade de recomendações marcadas como revisão não coincide necessariamente com repetições de item, pois um conceito pode reaparecer em outro formato ainda inédito.
+
+Retorno em 20 minutos sem repetir itens, revisão em formato alternativo, catálogo insuficiente sem fabricar fila, vídeo indisponível excluído e evidência de domínio em dias distintos têm asserções específicas nos testes. O teste de vídeo indisponível usa fixture sintética; não simula prova de remoção de um vídeo real do MIT.
+
+## Modelos
+
+36 modelos avaliados em defaults e extremos, sem NaN/Infinity. Cada controle altera resultado ou curva. Valores de referência independentes conferidos para oscilador livre, parede plana, circuito estrela e alongamento axial. Testes de todos os controles não equivalem a auditoria completa de cada equação física; revisão técnica humana permanece pendente. Gráficos são calculados de parâmetros reais, com escalas e hipóteses; animação SVG respeita movimento reduzido.
+
+## Backend
+
+Mocks exercitam: servidor não configurado falha fechado, login/origem, cookies cifrados e expiração, Google OAuth state/PKCE, callback inválido, troca de código sem expor token, classificação Calendar/fuso/paginação, leitura/deduplicação Notion, limite de pasta Drive, extração de texto com origem e recusa de PDF não suportado. Não há operação de escrita Notion.
+
+**Google, Notion, Drive e Netlify reais não foram autenticados ou publicados.** Não se declara integração ativa, compatibilidade com esquemas reais ou aceite OAuth com base em mocks. A API GitHub também retornou Forbidden; CI remota não confirmada.
+
+## Problemas investigados nesta rodada
+
+Corrigidos: controles decorativos removidos, duas explicações muito curtas ampliadas, aliases de vídeo deduplicados, validação do catálogo adaptada à identidade do vídeo, referências de desafios resolvidas por ID, restauração de simulados aguardando catálogo, proteção de atualização durante sessão e espera pelo SW ativado antes de recarregar. O teste de migração tinha uma espera intermitente em evento de página; a checagem final observa a troca real do SW/caches e testa a nova versão offline com o mesmo progresso.
+
+## Não executados / limites
+
+Safari/iPhone físico, reprodução real do YouTube, OAuth e APIs de contas reais, publicação HTTPS nova, extração de PDF/OCR e sync com app fechado. Não houve geração de dados acadêmicos pessoais para preencher resultados. Relatórios distinguem metadados públicos reais, conteúdo autoral e testes sintéticos.

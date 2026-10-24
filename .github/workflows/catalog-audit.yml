@@ -1,0 +1,25 @@
+name: Audit authorized catalog sources
+on:
+  schedule:
+    - cron: '20 9 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: python tools/verify-video-sources.py
+      - run: node tools/build-catalog.cjs
+      - run: node --test tests/adaptive.test.cjs
+      - uses: actions/upload-artifact@v4
+        with:
+          name: catalog-source-audit
+          path: |
+            CONTENT-COVERAGE.json
+            VIDEO-VERIFICATION-RESULTS.json

@@ -1,0 +1,28 @@
+{
+  "version": "1.5.0",
+  "cards": 402,
+  "distinctLessonConcepts": 153,
+  "challenges": 153,
+  "simulations": 36,
+  "sourceVerifiedVideos": 60,
+  "playbackVerifiedVideos": 0,
+  "bySubject": {
+    "MED120": 51,
+    "MEE120": 42,
+    "MEP230": 80,
+    "MEP140": 37,
+    "ELE010": 48,
+    "MEF120": 37,
+    "MRD230": 37,
+    "MEI150": 36,
+    "CSJ030": 34
+  },
+  "byFormat": {
+    "lesson": 153,
+    "challenge": 153,
+    "simulation": 36,
+    "video": 60
+  },
+  "duplicateIds": 0,
+  "review": "Conteúdo autoral com validação estrutural e testes; revisão pedagógica humana ainda pendente."
+}

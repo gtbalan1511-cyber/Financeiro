@@ -1,0 +1,47 @@
+name: Orbita CI and release package
+on:
+  push:
+    branches: [main, feat/orbita-1.4-integrated, feat/orbita-1.5-adaptive]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      TZ: America/Sao_Paulo
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: npm ci
+      - run: npm test
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:usage
+      - run: npm run test:browser
+      - run: npm run build
+      - name: Check deployment archive for private data
+        run: |
+          python - <<'PY'
+          import zipfile, pathlib
+          paths = list(pathlib.Path('dist').glob('*PWA-Static*.zip'))
+          assert len(paths) == 1, f'Expected one static PWA ZIP, found {paths}'
+          with zipfile.ZipFile(paths[0]) as z:
+              names = z.namelist()
+              assert 'index.html' in names, 'Missing root index.html'
+              forbidden = ('_contexto_privado', '.env', 'notion_estudos_snapshot', 'agenda_estudos_snapshot', 'fontes_drive')
+              assert not any(any(x in n.lower() for x in forbidden) for n in names), 'Private file found in deploy ZIP'
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: orbita-static-tested
+          path: dist/*PWA-Static*.zip
+          if-no-files-found: error

@@ -1,0 +1,37 @@
+[
+  {
+    "url": "https://astra-ai.co/",
+    "at": "2026-10-24T01:04:19.795Z",
+    "status": 200,
+    "finalURL": "https://astra-ai.co/",
+    "title": "Astra AI – Study & Exam Prep | AI Tutor for All Subjects"
+  },
+  {
+    "url": "https://app.astra-ai.co/",
+    "at": "2026-10-24T01:04:23.050Z",
+    "status": 200,
+    "finalURL": "https://app.astra-ai.co/",
+    "title": "Entre na Astra AI"
+  },
+  {
+    "url": "https://app.astra-ai.co/showcase",
+    "at": "2026-10-24T01:04:25.259Z",
+    "status": 200,
+    "finalURL": "https://app.astra-ai.co/showcase",
+    "title": "O que é o Astra AI?"
+  },
+  {
+    "url": "https://app.astra-ai.co/lab",
+    "at": "2026-10-24T01:04:27.496Z",
+    "status": 200,
+    "finalURL": "https://app.astra-ai.co/lab",
+    "title": "Apps de aprendizagem"
+  },
+  {
+    "url": "https://venerable-narwhal-8d8674.netlify.app/",
+    "at": "2026-10-24T01:04:29.622Z",
+    "status": 401,
+    "finalURL": "https://app.netlify.com/edge-access?domain=venerable-narwhal-8d8674.netlify.app&requested_path=%2F&site_id=e077193f-99b1-4e78-83c9-edcf8b30ef8c",
+    "title": "Team protection | Netlify"
+  }
+]

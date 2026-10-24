@@ -1,0 +1,128 @@
+{
+  "at": "2026-10-24T04:18:51.558Z",
+  "physicalDevices": 0,
+  "backend": "HTTPS Node + SQLite real local; sem OAuth de provedores reais",
+  "results": [
+    {
+      "browser": "chromium",
+      "name": "navegação desktop/mobile sem overflow e navegação lateral desktop",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "exercício iniciado no desktop, retomado no mobile e reaberto sem duplicação",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "reabertura offline com Service Worker e progresso persistente",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "resposta offline, reconexão e sincronização idempotente com banco real local",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "conflito concorrente preserva cópia local e remota sem sobrescrita",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "cadastro de disciplina sincronizado e resolução explícita de conflito",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "flashcards e feed desktop/mobile",
+      "status": "PASS"
+    },
+    {
+      "browser": "chromium",
+      "name": "sem exceções JavaScript",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "navegação desktop/mobile sem overflow e navegação lateral desktop",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "exercício iniciado no desktop, retomado no mobile e reaberto sem duplicação",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "reabertura offline com Service Worker e progresso persistente",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "resposta offline, reconexão e sincronização idempotente com banco real local",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "conflito concorrente preserva cópia local e remota sem sobrescrita",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "cadastro de disciplina sincronizado e resolução explícita de conflito",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "flashcards e feed desktop/mobile",
+      "status": "PASS"
+    },
+    {
+      "browser": "firefox",
+      "name": "sem exceções JavaScript",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "navegação desktop/mobile sem overflow e navegação lateral desktop",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "exercício iniciado no desktop, retomado no mobile e reaberto sem duplicação",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "recarregar offline",
+      "status": "BLOCKED",
+      "reason": "WebKit Playwright Linux retorna internal error com Service Worker, reproduzido em HTTP e HTTPS locais; iPhone físico não testado."
+    },
+    {
+      "browser": "webkit",
+      "name": "resposta offline, reconexão e sincronização idempotente com banco real local",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "conflito concorrente preserva cópia local e remota sem sobrescrita",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "cadastro de disciplina sincronizado e resolução explícita de conflito",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "flashcards e feed desktop/mobile",
+      "status": "PASS"
+    },
+    {
+      "browser": "webkit",
+      "name": "sem exceções JavaScript",
+      "status": "PASS"
+    }
+  ]
+}

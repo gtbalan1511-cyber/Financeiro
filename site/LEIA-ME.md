@@ -1,29 +1,17 @@
-# Órbita Estudos 1.3.0 — instalação e uso
+# Instalação da versão atual
 
-App web estático gratuito, autoral, com 9 matérias, exercícios, flashcards, feed educativo, simulado Exam Prep e exercício do dia condicionado a uma agenda de estudo importada. Não requer API paga.
+Abra a URL HTTPS publicada no computador e no Safari do iPhone. No iPhone: Compartilhar → Adicionar à Tela de Início. No Chrome/Edge desktop: Instalar aplicativo. No Safari do macOS: Adicionar ao Dock, quando disponível.
 
-## Publicação
+O ZIP estático contém somente a interface/offline. Autenticação, progresso entre aparelhos e OAuth exigem publicar o backend e configurar banco/segredos. A configuração atual está documentada em docs/DEPLOY-CLOUDFLARE.md no repositório. Sem servidor configurado, o app informa que os dados são locais. Exporte backup antes de mudar de domínio.
 
-Publique **somente os arquivos desta pasta `site/`**, mantendo `index.html` na raiz do deploy. O ZIP `Órbita-Deploy-1.3.0.zip` já foi preparado para isso. O site publicado é acessível publicamente por quem souber o endereço; o arquivo `robots.txt` apenas desencoraja indexação, **não é autenticação**. O site NÃO inclui os dados pessoais, notas, links de Drive nem JSONs privados.
+## Instruções antigas (históricas)
 
-Para publicar na mesma conta Netlify: abra o painel da sua conta, escolha o site existente, faça o deploy do ZIP de publicação e confirme que a versão 1.3.0 aparece no rodapé. Não há credenciais de publicação neste pacote.
+# Órbita Estudos 1.5.0
 
-## Importar seus dados pessoais
+PWA com catálogo expansível de 402 atividades, feed adaptativo, sessões 5/15/30, desafios e 36 simulações. São 153 conceitos autorais e 60 referências de vídeos acadêmicos. IDs e títulos dos vídeos foram conferidos em fonte oficial; reprodução e durações exatas não foram verificadas nesta rede. Vídeos exigem internet e são carregados por escolha do usuário.
 
-1. Abra o ZIP **privado** em Arquivos no iPhone e extraia seus 3 JSONs.
-2. Abra o Órbita no Safari, vá a **Configurações**.
-3. Importe `agenda_estudos_snapshot.json` no campo Agenda, `notion_estudos_snapshot.json` em Notion e `fontes_drive.json` em Drive.
-4. O app mostra a data da cópia e avisa que **não existe sincronização automática**. O conteúdo é guardado apenas no armazenamento local do navegador; exporte backups periodicamente.
-5. Use **Hoje** para exercício elaborado (apenas se houver bloco de estudo no snapshot), **Preparação de provas** para simulado e **Progresso** para revisão.
+Publique somente este conteúdo estático em HTTPS. Para OAuth Calendar/Notion/Drive, publicar o projeto Git completo com funções Netlify e configurar as contas no servidor; o ZIP estático não instala backend. Nenhuma conta está conectada por padrão. Não cole tokens ou IDs no app.
 
-**Nunca envie os JSONs pessoais ou o ZIP privado para a hospedagem.** Importação ocorre pelo seletor de arquivos dentro do app, no navegador. Não cole credenciais, tokens ou chaves no aplicativo.
+No Safari: Compartilhar → Adicionar à Tela de Início. Abra online uma vez e teste offline. Exporte backup antes de atualizar. Safari físico ainda requer validação. Dados e trechos privados ficam locais e não devem ser publicados; a senha do servidor não cifra o armazenamento local.
 
-## Instalar no iPhone
-
-Abra o endereço HTTPS no Safari → Compartilhar → Adicionar à Tela de Início. Abra o ícone Órbita. Após primeiro carregamento online, parte do conteúdo pode funcionar offline graças ao Service Worker. O funcionamento offline ainda precisa de teste real no Safari.
-
-## Limitações
-
-O app não lê Google Calendar, Notion ou Drive ao vivo; usa apenas snapshots importados. Não extrai PDFs nem oferece IA generativa conectada. Os exercícios são **autorais**, não provas oficiais da FEI. Respostas de exercícios elaborados são autoavaliadas, não corrigidas automaticamente. Dados não sincronizam entre dispositivos. Não foi realizado teste final no Safari real.
-
-Atualização 1.3.0: offline validado em Chromium mobile/desktop. Safari real continua pendente. Simulados priorizam dificuldades e feed encerra ao fim do catálogo.
+Conteúdo introdutório autoral/curado, sem afiliação à FEI. Revisão pedagógica humana pendente. Simulações são educacionais, não ferramentas de dimensionamento certificado.
