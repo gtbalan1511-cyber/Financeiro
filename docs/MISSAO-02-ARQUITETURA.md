@@ -40,3 +40,7 @@ Documentação oficial conferida no repositório público cloudflare/cloudflare-
 Persistência validada nos dois adaptadores locais. Histórico cifrado retém 20 versões anteriores por trigger. Recuperação administrativa exige chave original e backup do D1; trocar a chave sem migrar torna versões ilegíveis. As chaves de cifra são segredos de servidor, sem possibilidade de recuperação se perdidas.
 
 CLI wrangler whoami em 24/10/2026: 'You are not authenticated'. Nenhuma conta/ID de banco foi inventado nem recurso pago ativado. Deploy definitivo e operação OAuth real bloqueados por cadastro/autorização externa.
+
+## Complemento da auditoria de infraestrutura
+
+Publicação anterior localizada e inspecionada pelo plugin Sites; página/API acessíveis e cliente Notion configurado, ainda sem conta conectada. Nenhum deploy novo realizado porque o helper obrigatório do plugin está ausente. Preservar origem/segredos quando o runtime estiver disponível. Evidências, estado e versão de rollback em INFRA-ATUAL.md.

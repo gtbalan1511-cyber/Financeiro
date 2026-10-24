@@ -1,5 +1,8 @@
 # Ativação gratuita — Cloudflare Workers + D1
 
+**Alternativa existente:** foi localizada uma publicação privada Sites que já usa Workers. Sua atualização preservaria o domínio, mas o helper obrigatório do plugin não está disponível no runtime. Cliente Notion existente foi preservado. Evidências e rollback: [INFRA-ATUAL.md](INFRA-ATUAL.md). O guia abaixo descreve o caminho independente em conta Cloudflare própria.
+
+
 Estado em 24/10/2026: código/Worker/D1 executados localmente; dry-run aprovado. **Sem deploy remoto:** `wrangler whoami` informou conta não autenticada. Não existe URL definitiva provisionada. Não usar preview temporário como produção pessoal. Nenhum serviço pago contratado.
 
 ## Ação externa indispensável

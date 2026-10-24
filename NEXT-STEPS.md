@@ -1,5 +1,8 @@
 # Pendências atuais — Missão 02 / 1.6.0
 
+**Caminho alternativo identificado:** atualizar o Sites existente preserva o domínio, mas depende de disponibilizar o helper obrigatório do plugin no ambiente. A publicação tem cliente Notion configurado, sem conta conectada; preservá-lo em vez de recriá-lo. Ver docs/INFRA-ATUAL.md.
+
+
 1. Criar/autorizar conta Cloudflare Free, disponibilizando acesso seguro; CLI atual não autenticada. Provisionar D1 real, cadastrar segredos privados, publicar e validar URL HTTPS. Não existe deploy remoto aceito. Guia: docs/DEPLOY-CLOUDFLARE.md.
 2. Criar clientes OAuth próprios do Órbita (Google Calendar/Drive e Notion), registrar redirects na origem final e consentir nas contas/fontes. Executar pelo menos uma operação real em cada serviço e testar revogação/renovação. Conexões do ChatGPT não autorizam o app.
 3. Validar Safari/iPhone físico, instalação standalone e offline. WebKit automatizado: erro interno na reabertura offline do runtime Linux; diagnóstico não comprova comportamento iOS. Validar também computador Windows/macOS real.

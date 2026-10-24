@@ -1,5 +1,8 @@
 # Verificação atual — Órbita 1.6.0 / Missão 02 (24/10/2026)
 
+**Atualização remota:** os jobs verify das execuções GitHub Actions 40061954130 e 40061954155 passaram no commit 9118fce. Deploy pulado, não publicado. A publicação Sites anterior responde, mas não contém a versão 1.6; Notion tem cliente configurado, sem consentimento conectado. Ver docs/INFRA-ATUAL.md.
+
+
 | Conjunto | Aprovados | Reprovados finais | Bloqueados |
 | --- | ---: | ---: | ---: |
 | Node (inclui segurança, regras, APIs e persistência) | 72 | 0 | 0 |

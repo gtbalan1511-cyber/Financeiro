@@ -1,5 +1,8 @@
 # Órbita Estudos 1.6.0 — Missão 02
 
+**Infraestrutura localizada depois da auditoria inicial:** existe uma publicação privada anterior em Sites, com página/API acessíveis e cliente Notion configurado, sem conta conectada; ela não recebeu a versão 1.6. O helper obrigatório do plugin está ausente. Detalhes e CI remoto aprovado: [infraestrutura atual](docs/INFRA-ATUAL.md).
+
+
 Evolução da branch 1.5.0, preservando catálogo, modelos, simulados e dados locais. Novos: progresso privado cifrado, D1/SQLite, retomada de exercícios em outro aparelho, fila offline com conflito explícito, cadastro de disciplinas e navegação desktop.
 
 **Estado real:** testes locais; sem URL de produção nova. Cloudflare não autenticada e clientes OAuth ausentes. Não declarar integração real nem iPhone físico validado. [Arquitetura](docs/MISSAO-02-ARQUITETURA.md), [investigação Astra](docs/REA-ASTRA.md), [ativação gratuita](docs/DEPLOY-CLOUDFLARE.md), [testes](TEST-REPORT.md).
