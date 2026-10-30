@@ -4,7 +4,7 @@ Site privado registrado no Sites:
 
 - Projeto: `appgprj_6ae491cf832881918e7357ab79c04327`
 - Endereço previsto: https://clareza-financeira-gabriel.gtbalan1511.chatgpt.site
-- Diretório estático: `site/`, declarado em `.openai/hosting.json`.
+- Diretório estático publicado: `dist/client/` (copiado de `site/` pelo build), declarado em `.openai/hosting.json`.
 
 A confirmação final do deploy é dada pelo retorno de publicação e entregue no chat. Um endereço previsto não é prova de publicação. Nenhum dado financeiro local é enviado no deploy. O acesso privado à interface não cria sincronização do banco entre aparelhos.
 
