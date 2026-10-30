@@ -3,10 +3,10 @@
 Site privado registrado no Sites:
 
 - Projeto: `appgprj_6ae491cf832881918e7357ab79c04327`
-- Endereço previsto: https://clareza-financeira-gabriel.gtbalan1511.chatgpt.site
+- Endereço publicado (status succeeded confirmado em 30/10/2026): https://clareza-financeira-gabriel.gtbalan1511.chatgpt.site
 - Diretório estático publicado: `dist/client/` (copiado de `site/` pelo build), declarado em `.openai/hosting.json`.
 
-A confirmação final do deploy é dada pelo retorno de publicação e entregue no chat. Um endereço previsto não é prova de publicação. Nenhum dado financeiro local é enviado no deploy. O acesso privado à interface não cria sincronização do banco entre aparelhos.
+Deploy confirmado pela plataforma: `appgdep_6ae494b89a8881919a1d7bb0e8892670`; versão `appgprj_6ae491cf832881918e7357ab79c04327~appgver_33b77addb77081918c03079396eb1a58`. Fonte publicada: commit `9b93c614bfafc1cd7a943eedbee0cb0988004c93` do repositório de hospedagem. Nenhum dado financeiro local é enviado no deploy. O acesso privado à interface não cria sincronização do banco entre aparelhos.
 
 Pacote alternativo: `npm run build` gera `dist/clareza-deploy.zip` contendo somente os arquivos da interface, pronto para uma hospedagem estática HTTPS. `dist/clareza-fonte.zip` contém código, documentação e testes sintéticos, sem dados privados do usuário.
 
