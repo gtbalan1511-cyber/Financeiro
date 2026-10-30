@@ -1,0 +1,44 @@
+[
+  {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "status": "PASS",
+    "checks": [
+      "cadastro conta e salário",
+      "importação CSV revisada",
+      "divisão responsáveis",
+      "reembolso parcial exato",
+      "conserto 800/2",
+      "desejo e análise",
+      "consultor com dados reais",
+      "persistência após reload",
+      "backup exportação/restauração",
+      "9 telas sem overflow",
+      "offline com importadores em cache",
+      "console sem exceções"
+    ]
+  },
+  {
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "status": "PASS",
+    "checks": [
+      "cadastro conta e salário",
+      "importação CSV revisada",
+      "divisão responsáveis",
+      "reembolso parcial exato",
+      "conserto 800/2",
+      "desejo e análise",
+      "consultor com dados reais",
+      "persistência após reload",
+      "backup exportação/restauração",
+      "9 telas sem overflow",
+      "offline com importadores em cache",
+      "console sem exceções"
+    ]
+  }
+]

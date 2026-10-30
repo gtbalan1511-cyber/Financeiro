@@ -1,0 +1,20 @@
+{
+  "name": "clareza-financeira",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "python3 -m http.server 4180 --directory site",
+    "test": "node --test tests/*.test.js",
+    "build": "python3 package.py",
+    "test:browser": "node tests/browser.cjs && node tests/imports.cjs"
+  },
+  "dependencies": {
+    "@e965/xlsx": "0.20.3",
+    "papaparse": "5.5.3",
+    "pdfjs-dist": "4.10.38"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}
